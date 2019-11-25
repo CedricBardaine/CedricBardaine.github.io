@@ -1,0 +1,44 @@
+.bg-0 { background-color: white;}
+.bg-0 .separator { color: #2C3E50;}
+.bg-1 { background-color: #2C3E50 !important ; }
+.bg-2 { background-color: #669C5E !important ; color: white;}
+.bg-2 .separator { color: white; border-color: white !important;}
+.bg-3 { background-color: #E8A90C !important ; }
+
+html {
+    font-family: 'Poppins' ; 
+    font-size: 1.2rem ;
+}
+
+/* .navbar-text { color: white; } !!!!PAS UTILISE */
+
+h2 {
+    text-transform: uppercase;
+    text-align: center !important;
+    font-size: 3rem;
+}
+
+
+.customHR {
+    
+}
+
+
+.separator {
+    font-family: 'Poppins', serif; font-size: 48px  !important ;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* color: #2C3E50; */
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
