@@ -10,26 +10,79 @@ html {
     font-size: 1.2rem ;
 }
 
-/* .navbar-text { color: white; } !!!!PAS UTILISE */
-
 h2 {
     text-transform: uppercase;
     text-align: center !important;
     font-size: 3rem;
 }
-
-
-.customHR {
-    
+h3 {
+    text-align: center !important;
+    font-size: 1.5rem;
 }
 
+.lineIcon {
+    text-align: center;
+    font-size: 3rem;
+}
+.lineIcon i {
+    margin-inline: 1rem ;
+    color: #2C3E50 ;
+    transition-duration: 0.4s;
+}
+.lineIcon i:hover {
+    color: #E8A90C;
+    /* font-size: 3.2rem; */
+    transition-duration: 0.4s;
+}
+.lineIcon img {
+    height: 5rem;
+    margin-inline: 1rem ;
+    transition-duration: 0.4s;
+}
+.lineIcon img:hover {
+    height: 6rem;
+    transition-duration: 0.4s;
+}
 
+.myName {
+    font-size: 3rem;
+}
+
+.copyright {
+    background-color: #1a252f;
+  }
+
+  footer {
+      color: #fff; 
+    background-color: #2C3E50;
+    /* background: linear-gradient(#2C3E50, #1a252f); */
+
+
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+10,45619d+30,1cb7eb+40,000000+50,007bb5+60,c9359b+70,c9359b+70,ffffff+90 */
+
+/* !!!! background: #ffffff;  */
+/* Old browsers */
+/* !!!! background: -moz-linear-gradient(left,  #ffffff 10%, #45619d 30%, #1cb7eb 40%, #000000 50%, #007bb5 60%, #c9359b 70%, #c9359b 70%, #ffffff 90%);  */
+/* FF3.6-15 */
+/* !!!! background: -webkit-linear-gradient(left,  #ffffff 10%,#45619d 30%,#1cb7eb 40%,#000000 50%,#007bb5 60%,#c9359b 70%,#c9359b 70%,#ffffff 90%);  */
+/* Chrome10-25,Safari5.1-6 */
+/* !!!! background: linear-gradient(to right,  #ffffff 10%,#45619d 30%,#1cb7eb 40%,#000000 50%,#007bb5 60%,#c9359b 70%,#c9359b 70%,#ffffff 90%);  */
+/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/* !!!! filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );  */
+/* IE6-9 */
+
+
+
+  }
+
+
+/* Custom separator ####################################################### */
 .separator {
     font-family: 'Poppins', serif; font-size: 48px  !important ;
     display: flex;
     align-items: center;
     text-align: center;
-    /* color: #2C3E50; */
+    color: #2C3E50;
 }
 .separator::before, .separator::after {
     content: '';
@@ -42,3 +95,14 @@ h2 {
 .separator::after {
     margin-left: .25em;
 }
+
+/* !!! Bootsrap override !!! ####################################################### */
+
+
+/* !!! Slect2 : override !!! ####################################################### */
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #E8A90C;
+            color: white; }
+        .select2-container--default .select2-results__option {
+           font-size: 0.7rem;
+         }

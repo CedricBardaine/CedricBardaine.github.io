@@ -7,7 +7,7 @@
     <link rel="icon" href="./src/imgs/CLetter.png">
     <title>Cédric Bardaine</title>
     
-    <link rel="stylesheet" href="./src/css/css.css">
+    
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     
@@ -21,20 +21,25 @@
     
     <!-- Fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Nunito">
+    
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/1a26977861.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./src/css/css.css">
 </head>
 
 
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark  bg-1">
+    <nav class="navbar  navbar-expand-lg navbar-dark fixed-top bg-1">
         <a class="navbar-brand" href="#">Cédric Bardaine</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="#skillsSection">Skills</a>
                 </li>
                 <li class="nav-item">
@@ -48,116 +53,124 @@
     </nav>
     
     <header class="masthead  text-white text-center bg-2">
-        <br>
+        <br><br><br><br>
         <div class="container">
             <img class="img-fluid mb-5 d-block mx-auto" src="src/imgs/me.png"  alt="" style="height: 20em;">
-            <h1 class="text-uppercase mb-0">Cédric Bardaine</h1>
+            <h1 class="text-uppercase mb-0 myName">Cédric Bardaine</h1>
             <br>
-            <h2 class="font-weight-light mb-0">Developer  &  3 year student</h2>
+            <h2 class="font-weight-light mb-0">Developer <br> & <br> 3 year IT student</h2>
         </div>
-        <br>
+        <br> <br>
     </header>
     
-    
-    <div id="skillsSection" class="container">
-        <br>
-        <div class="separator">< Skills ></div><br>
-        <div class="row">
-            <div class="col-sm">
-                <p>
-                    You want to see wich technology I’ve already used or wich I know, just search in the list bellow.
-                </p> 
-                <form>
-                    <div class="form-group">
-                        <!-- <label for="exampleFormControlSelect1">Skills</label> -->
-                        <select id="skillsList" class="form-control select2Form" data-placeholder="Skills..." size="7" >
-                            <option></option>
-                            <optgroup label="IT Languages">
-                                <option> Java SE </option>
-                                <option> Java JEE </option>
-                                <option> HTML </option>
-                                <option> CSS </option>
-                                <option> PHP </option>
-                                <option> JavaScript </option>
-                                <option> SQL </option>
-                                <option> MySQL </option>
-                                <option> PostgreSQL </option>
-                                <option> Bash </option>
-                                <option> Python </option>
-                                <option> C++ </option>
-                                <option> XML </option>
-                                <option> Assembleur8086 </option>
-                            </optgroup>
-                            
-                            <optgroup label="Frameworks & Technos">
-                                <option> Ajax </option>
-                                <option> Android Studio </option>
-                                <option> AngularJS </option>
-                                <option> Ant </option>
-                                <option> Bootstrap </option>
-                                <option> ChartJS </option>
-                                <option> Cordova </option>
-                                <option> Docker </option>
-                                <option> Git </option>
-                                <option> GitHub </option>
-                                <option> GitLab </option>
-                                <option> Gradle </option>
-                                <option> JavaServer Pages </option>
-                                <option> JUnit </option>
-                                <option> Jupyter Notebook </option>
-                                <option> MongoDB </option>
-                                <option> NodeJS </option>
-                                <option> PHPMyAdmin </option>
-                                <option> PlantUML </option>
-                                <option> Symfony </option>
-                                <option> TensorFlow </option>
-                                <option> VueJS </option>
-                                <option> WordPress </option>
-                            </optgroup>
-                            
-                            <optgroup label="IT Knowledge">
-                                <option> DataBases </option>
-                                <option> UML </option>
-                                <option> Linux </option>
-                                <option> Admin System </option>
-                                <option> Deep Learning </option>
-                                <option> Agile & Scrum methodology </option>
-                            </optgroup>
-                            
-                            <optgroup label="General Knowledge">
-                                <option> IT law </option>
-                                <option> Project management </option>
-                                <option> Ergonomics </option>
-                                <option> Economy </option>
-                                <option> Communication </option>
-                            </optgroup>
-                            
-                            <optgroup label="Languages">
-                                <option> French </option>
-                                <option> English </option>
-                                <option> German </option>
-                            </optgroup>
-                            
-                            <!-- <optgroup label="Others">
-                                <option> Adobe Photoshop </option>
-                                <option> Adobe Premiere Pro </option>
-                                <option> Adobe After Effect </option>
-                                <option> Adobe Illustrator </option>
-                            </optgroup> -->
-                        </select>
-                        <script> $(document).ready(function() { $(".select2Form").select2(); }); </script>
+    <section id="skillsSection">
+
+        <div id="skillsSection" class="container">
+            <br> <br>
+            <div class="separator">< Skills ></div><br>
+            <div class="row">
+                <div class="col-sm">
+                    <h3>All of them</h3>
+                    <hr>
+                    <p>
+                        You want to see wich technology I’ve already used or wich I know, just search in the list bellow.
+                    </p> 
+                    <form>
+                        <div class="form-group">
+                            <!-- <label for="exampleFormControlSelect1">Skills</label> -->
+                            <select id="skillsList" class="form-control select2Form" data-placeholder="Skills..." size="7" >
+                                <option></option>
+                                <optgroup label="IT Languages">
+                                    <option> Java SE </option>
+                                    <option> Java JEE </option>
+                                    <option> HTML </option>
+                                    <option> CSS </option>
+                                    <option> PHP </option>
+                                    <option> JavaScript </option>
+                                    <option> SQL </option>
+                                    <option> MySQL </option>
+                                    <option> PostgreSQL </option>
+                                    <option> Bash </option>
+                                    <option> Python </option>
+                                    <option> C++ </option>
+                                    <option> XML </option>
+                                    <option> Assembleur8086 </option>
+                                </optgroup>
+                                
+                                <optgroup label="Frameworks & Technos">
+                                    <option> Ajax </option>
+                                    <option> Android Studio </option>
+                                    <option> AngularJS </option>
+                                    <option> Ant </option>
+                                    <option> Bootstrap </option>
+                                    <option> ChartJS </option>
+                                    <option> Cordova </option>
+                                    <option> Docker </option>
+                                    <option> Git </option>
+                                    <option> GitHub </option>
+                                    <option> GitLab </option>
+                                    <option> Gradle </option>
+                                    <option> JavaServer Pages </option>
+                                    <option> JUnit </option>
+                                    <option> Jupyter Notebook </option>
+                                    <option> MongoDB </option>
+                                    <option> NodeJS </option>
+                                    <option> PHPMyAdmin </option>
+                                    <option> PlantUML </option>
+                                    <option> Symfony </option>
+                                    <option> TensorFlow </option>
+                                    <option> VueJS </option>
+                                    <option> WordPress </option>
+                                </optgroup>
+                                
+                                <optgroup label="IT Knowledge">
+                                    <option> DataBases </option>
+                                    <option> UML </option>
+                                    <option> Linux </option>
+                                    <option> Admin System </option>
+                                    <option> Deep Learning </option>
+                                    <option> Agile & Scrum methodology </option>
+                                </optgroup>
+                                
+                                <optgroup label="General Knowledge">
+                                    <option> IT law </option>
+                                    <option> Project management </option>
+                                    <option> Ergonomics </option>
+                                    <option> Economy </option>
+                                    <option> Communication </option>
+                                </optgroup>
+                                
+                                <optgroup label="Languages">
+                                    <option> French </option>
+                                    <option> English </option>
+                                    <option> German </option>
+                                </optgroup>
+                                
+                                <!-- <optgroup label="Others">
+                                    <option> Adobe Photoshop </option>
+                                    <option> Adobe Premiere Pro </option>
+                                    <option> Adobe After Effect </option>
+                                    <option> Adobe Illustrator </option>
+                                </optgroup> -->
+                            </select>
+                            <script> $(document).ready(function() { $(".select2Form").select2(); }); </script>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm">
+                    <h3>My little favorites</h3>
+                    <hr>
+                    <div class="lineIcon">
+                        <i class="fab fa-java"></i> <i class="fab fa-symfony"></i> <i class="fab fa-git-alt"></i>
                     </div>
-                </form>
+                </div>
             </div>
-            <div class="col-sm">
-                
-            </div>
+            <br> <br>
         </div>
-        <br>
-    </div>
+    </section>
     
-    <div id="aboutMeSection" class="bg-2">
-        <br>
+    <div id="aboutMeSection" class="bg-2"  >
+        <br> <br>
         <div class="container">
             <div class="separator">< About Me ></div><br>
             
@@ -175,17 +188,39 @@
             </div>
             
         </div>
-        <br>
+        <br> <br>
     </div>
-
-
     
+    <div id="contactMeSection">
+        <br> <br>
+        <div class="container">
+            <div class="separator">< Contact Me ></div><br>
+        </div>
+        <div class="lineIcon">
+            <a target="_blank" href="https://www.facebook.com/cedriccbrd/"><img src="./src/imgs/icon-facebook.svg" alt="Facebook"></a>
+            <a target="_blank" href="https://twitter.com/CBardaine/"><img src="./src/imgs/icon-twitter.svg" alt="Twitter"></a>
+            <a target="_blank" href="https://github.com/CedricBardaine/"><img src="./src/imgs/icon--github.svg" alt="GitHub"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/c%C3%A9dric-bardaine-671ba014a/"><img src="./src/imgs/icon-linkedin.svg" alt="LinkedIn"></a>
+            <a target="_blank" href="https://www.instagram.com/cedb.cb/"><img src="./src/imgs/icon---instagram.svg" alt="Instagram"></a>
+        </div>
+        <br> <br>
+    </div>
+    <br>
+    
+    <footer>
+        <br>
+    </footer>
+    <div class="copyright py-2 text-center text-white">
+        <div class="container">
+            <small>Copyright &copy; <i>Cédric Bardaine</i> 2019</small>
+        </div>
+    </div>
     
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     
     
-    
+    <!-- <i class="fas fa-cat"></i> -->
 </body>
 </html>
