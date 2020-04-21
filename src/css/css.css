@@ -102,7 +102,8 @@ h3 {
 /* !!! Slect2 : override !!! ####################################################### */
         .select2-container--default .select2-results__option--highlighted[aria-selected] {
             background-color: #E8A90C;
-            color: white; }
+            color: white; 
+        }
         .select2-container--default .select2-results__option {
            font-size: 0.7rem;
          }
