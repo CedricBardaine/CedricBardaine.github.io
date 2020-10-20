@@ -25,6 +25,9 @@
         <v-card class="elevation-2" v-if="!!diploma.title">
           <v-card-title style="word-break: normal" :style="$vuetify.breakpoint.xs ? 'font-size:0.8em' : ''">{{diploma.title}}  </v-card-title>
             <v-card-text>{{diploma.where}}</v-card-text>
+              <v-card-subtitle v-show="$vuetify.breakpoint.xs" align="end">
+                {{diploma.date}}
+              </v-card-subtitle>
         </v-card>
       </v-timeline-item>
     </v-timeline>
