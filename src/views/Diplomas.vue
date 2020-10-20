@@ -1,35 +1,37 @@
 <template>
-  <v-container >
+  <v-container>
     <v-col>
 
-    <v-row justify="center">
-      <h1>Mes diplômes</h1>
-
-    </v-row>
-    <div class="c-spacer"></div>
-
-
-      <v-row justify=center>
-      <v-btn color="secondary" fab depressed disabled large >{{new Date().getFullYear()}}</v-btn>
+      <v-row justify="center">
+        <h1>Mes diplômes</h1>
       </v-row>
-    <v-timeline>
-      <v-timeline-item
-        v-for="(diploma, i) in diplomas" :key="i"
-        color="primary"
-        :icon="'mdi-certificate'"
 
-      >
-        <template v-slot:opposite v-if="diploma.title">
-          <span>{{diploma.date}}</span>
-        </template>
-        <v-card class="elevation-2" v-if="!!diploma.title">
-          <v-card-title style="word-break: normal" :style="$vuetify.breakpoint.xs ? 'font-size:0.8em' : ''">{{diploma.title}}  </v-card-title>
+      <div class="c-spacer"></div>
+
+      <v-row :justify="$vuetify.breakpoint.xs ? 'left' : 'center'" class="ml-4 ma-sm-0">
+        <v-btn color="secondary" fab depressed disabled large >{{new Date().getFullYear()}}</v-btn>
+      </v-row>
+
+      <v-timeline :dense="$vuetify.breakpoint.xs">
+        <v-timeline-item
+          v-for="(diploma, i) in diplomas" :key="i"
+          color="primary"
+          :icon="'mdi-certificate'"
+        >
+          <template v-slot:opposite v-if="diploma.title">
+            <span>{{diploma.date}}</span>
+          </template>
+          <v-card class="elevation-2" v-if="!!diploma.title">
+            <v-card-title style="word-break: normal" :style="$vuetify.breakpoint.xs ? 'font-size:0.8em' : ''"> {{diploma.title}} </v-card-title>
             <v-card-text>{{diploma.where}}</v-card-text>
-        </v-card>
-      </v-timeline-item>
-    </v-timeline>
-  </v-col>
+            <v-card-subtitle v-show="$vuetify.breakpoint.xs" align="end">
+              {{diploma.date}}
+            </v-card-subtitle>
+          </v-card>
+        </v-timeline-item>
+      </v-timeline>
 
+    </v-col>
   </v-container>
 </template>
 

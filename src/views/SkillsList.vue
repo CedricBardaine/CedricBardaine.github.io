@@ -17,13 +17,14 @@
       thumb-label="always"
       ticks="always"
       justify="center"
+      class="text-button"
       ></v-slider>
     </v-row>
     <p>{{masteryTxt}}</p>
     
     <br>
     
-    <p>Au niveau  <v-btn fab x-small color="secondary"  class="mx-2">{{level}}</v-btn>  les compétences qui s'affichent sont :</p>
+    <p>Au niveau  <v-btn fab x-small color="primary"  class="ma-1 text-button">{{level}}</v-btn>  les compétences qui s'affichent sont :</p>
     <p v-if="level >= 1">
       des compétences que je maîtrise particulièrement, je les utilise régulièrement et je suis à mon aise avec elles.
     </p>
@@ -149,9 +150,9 @@
 </script>
 
 <style>
+  /* For v-chip */
   .list-item {
-    display: inline-block;
-    margin:1rem;
+    margin:4px;
   }
   .list-enter-active, .list-leave-active {
     transition: all 1s;

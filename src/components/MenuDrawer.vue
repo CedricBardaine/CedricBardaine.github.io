@@ -19,7 +19,7 @@
               ''
             "
           >
-            <v-list-item-icon class="c-margin-little" >
+            <v-list-item-icon>
               <v-icon >{{ item.icon }}</v-icon>
             </v-list-item-icon>
 
@@ -66,9 +66,3 @@ export default {
   },
 };
 </script>
-
-<style >
-  .c-margin-little {
-    margin-right: 1rem !important;
-  }
-</style>
