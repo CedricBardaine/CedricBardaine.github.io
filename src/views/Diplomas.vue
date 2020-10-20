@@ -9,10 +9,10 @@
     <div class="c-spacer"></div>
 
 
-      <v-row justify=center>
+      <v-row :justify="$vuetify.breakpoint.xs ? 'left' : 'center'" class="ml-4 ma-sm-0">
       <v-btn color="secondary" fab depressed disabled large >{{new Date().getFullYear()}}</v-btn>
       </v-row>
-    <v-timeline>
+    <v-timeline :dense="$vuetify.breakpoint.xs">
       <v-timeline-item
         v-for="(diploma, i) in diplomas" :key="i"
         color="primary"
