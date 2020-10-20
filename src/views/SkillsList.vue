@@ -150,9 +150,9 @@
 </script>
 
 <style>
+  /* For v-chip */
   .list-item {
-    display: inline-block;
-    margin:1rem;
+    margin:4px;
   }
   .list-enter-active, .list-leave-active {
     transition: all 1s;
