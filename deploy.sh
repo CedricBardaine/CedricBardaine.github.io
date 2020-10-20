@@ -25,4 +25,9 @@ git push -f git@github.com:CedricBardaine/CedricBardaine.github.io.git master
 cd -
 
 
+# PAUSE
+# cmd /k
+read varpause
+
+
 # <USERNAME> : CedricBardaine
