@@ -27,13 +27,16 @@
             <h3>Mes favoris 2019/2020 :</h3>
           </v-row>
           <v-row justify="center">
-            <v-icon large color="primary" style="font-size: 5rem">mdi-language-java</v-icon>
             <v-icon large color="primary" style="font-size: 5rem">mdi-angular</v-icon>
-            <v-icon large color="primary" style="font-size: 5rem">mdi-git</v-icon>
+            <v-icon large color="primary" style="font-size: 5rem">mdi-language-java</v-icon>
+            <v-icon large color="primary" style="font-size: 5rem">mdi-vuejs</v-icon>
           </v-row>
 
           <div class="c-spacer"></div>
 
+          <v-row justify="center">
+            <h3>Mon GitHub :</h3>
+          </v-row>
           <v-row>
             <MyGitHub/>
           </v-row>
