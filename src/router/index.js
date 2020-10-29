@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/cat',
+    path: '',
     name: 'Cat',
     component: () => import('@/components/Cat.vue')
   },
@@ -21,7 +21,7 @@ const routes = [
     component: () => import('@/views/ContactMe.vue')
   },
   {
-    path: '/SkillsList',
+    path: '',
     name: 'SkillsList',
     component: () => import('@/views/SkillsList.vue')
   },
@@ -31,12 +31,12 @@ const routes = [
   //   component: () => import('@/views/Timeline.vue')
   // },
   {
-    path: '/Diplomas',
+    path: '',
     name: 'Diplomas',
     component: () => import('@/views/Diplomas.vue')
   },
   {
-    path: '/MyGitHub',
+    path: '',
     name: 'MyGitHub',
     component: () => import('@/views/MyGitHubRepo.vue')
   },
