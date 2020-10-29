@@ -41,7 +41,7 @@ export default {
         // icon: 'mdi-cat',
         // goto: 'Cat'
         // },
-        {title: '',
+        {title: 'Accueil',
           icon: 'mdi-home',
           goto: 'Home',
         },
