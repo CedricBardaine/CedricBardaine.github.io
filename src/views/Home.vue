@@ -1,6 +1,6 @@
 <template>
   <!-- //TODO: ajouter l'école, ajouter l'entreprise -->
-  
+
   <v-container class="text-center">
     <v-col>
       <v-row justify="center">
@@ -9,18 +9,18 @@
       <v-row justify="center">
         <h2>Développeur <br> Full-Stack</h2>
       </v-row>
-      
+
       <div class="c-spacer"></div>
-      
+
       <v-row justify="center">
         <v-row class="col-md-6 ">
           Bonjour ! Je m'appelle Cédric, je suis développeur en alternance à KERMAP et étudiant en 4ème année.
           N'hésitez pas à parcourir mon site afin d'en savoir plus sur mon parcours professionnel et mes compétences.
         </v-row>
       </v-row>
-      
+
       <div class="c-spacer"></div>
-      
+
       <v-row>
         <v-col>
           <v-row justify="center">
@@ -33,7 +33,7 @@
           </v-row>
 
           <div class="c-spacer"></div>
-          
+
           <v-row>
             <MyGitHub/>
           </v-row>
@@ -45,7 +45,7 @@
 
 <script>
   import MyGitHub from '@/components/MyGitHub'
-  
+
   export default {
     components: {
       MyGitHub,
