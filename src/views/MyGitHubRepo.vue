@@ -21,7 +21,7 @@
             <span>{{ repo.name }}</span>
             <v-spacer></v-spacer>
             <v-icon large color="primary"
-              >mdi-language-{{ repo.language.toLowerCase() }}</v-icon
+              >mdi-language-{{ repo.language ?  repo.language.toLowerCase() : ''}}</v-icon
             >
           </v-card-title>
           <v-card-subtitle>
