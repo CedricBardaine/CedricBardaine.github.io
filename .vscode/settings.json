@@ -1,0 +1,34 @@
+{
+    /*
+    primary : #669C5E 
+    secondary : #E8A90C 
+    background : 2C3E50
+    */
+    "workbench.colorCustomizations": {
+        // "activityBar.background": "#2C3E50",
+        "activityBar.foreground": "#E8A90C",
+        "activityBarBadge.background": "#669C5E",
+        //
+        // "sideBar.background": "#2C3E50",
+        "sideBarTitle.foreground": "#E8A90C",
+        // "panel.border": "#2C3E50",
+        //
+        "panelTitle.activeBorder": "#E8A90C",
+        //
+        "button.background": "#F6C957",
+        "button.foreground": "#2C3E50",
+        //
+        // "editorGroupHeader.tabsBackground": "#2C3E50",
+        //
+        // "breadcrumb.background": "#2C3E50",
+        //
+        "statusBar.background": "#669C5E",
+        //
+        "editorLineNumber.foreground": "#B3DABA",
+        "editorLineNumber.activeForeground": "#F6C957",
+        // 
+        "minimapSlider.hoverBackground": "#669C5E30",
+        "minimapSlider.background": "#669C5E30",
+        //
+    }
+}
