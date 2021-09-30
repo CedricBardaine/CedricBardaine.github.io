@@ -1,0 +1,29 @@
+{
+  "name": "cedricbardaine.github.io",
+  "version": "1.0.0",
+  "description": "My personal website on GitHub",
+  "main": "index.js",
+  "scripts": {
+    "build-css-with-tailwind": "tailwindcss build src/styles.css -o public/styles.css",
+    "build-css-with-postcss": "postcss src/styles.css -o public/styles.css",
+    "clean": "rm -rf node_modules",
+    "re-install": "npm run clean && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CedricBardaine/CedricBardaine.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CedricBardaine/CedricBardaine.github.io/issues"
+  },
+  "homepage": "https://github.com/CedricBardaine/CedricBardaine.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.3.6",
+    "postcss": "^8.3.8",
+    "postcss-cli": "^9.0.1",
+    "tailwindcss": "^2.2.16"
+  }
+}
