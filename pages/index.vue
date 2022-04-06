@@ -20,21 +20,26 @@
         Salut ! Moi c'est Cédric,
         je suis développeur Fullstack au sein d'une start-up dont l'expertise est le traitement et la mise en valeur des données sattelitte.
       </div>
+
+      <div id="chart1" />
     </div>
   </div>
 </template>
 
 <script>
+
+import { GoogleCharts } from 'google-charts'
+
 export default {
   name: 'IndexPage',
 
   head () {
     return {
-      script: [
-        {
-          src: 'https://www.gstatic.com/charts/loader.js'
-        }
-      ]
+      // script: [
+      //   {
+      //     src: 'https://www.gstatic.com/charts/loader.js'
+      //   }
+      // ]
       // title: this.title,
       // meta: [
       //   // hid is used as unique identifier. Do not use `vmid` for it as it will not work
@@ -48,7 +53,22 @@ export default {
     }
   },
 
-  mounted () {}
+  mounted () {
+    // Load the charts library with a callback
+    GoogleCharts.load(drawChart)
+
+    function drawChart () {
+      // Standard google charts functionality is available as GoogleCharts.api after load
+      const data = GoogleCharts.api.visualization.arrayToDataTable([
+        ['Chart thing', 'Chart amount'],
+        ['Lorem ipsum', 60],
+        ['Dolor sit', 22],
+        ['Sit amet', 18]
+      ])
+      const charttest = new GoogleCharts.api.visualization.PieChart(document.getElementById('chart1'))
+      charttest.draw(data)
+    }
+  }
 }
 
 </script>
