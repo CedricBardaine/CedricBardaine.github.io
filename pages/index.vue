@@ -16,9 +16,12 @@
       id="section-myself"
       class="h-screen grid content-center"
     >
-      <div class="justify-self-center">
-        Salut ! Moi c'est Cédric,
-        je suis développeur Fullstack au sein d'une start-up dont l'expertise est le traitement et la mise en valeur des données sattelitte.
+      <div id="centered-presentation-text" class="text-center text-lg px-10">
+        <div class="justify-self-center">
+          Salut ! Moi c'est Cédric,
+          je suis développeur Fullstack au sein d'une start-up
+          dont l'expertise est le traitement et la mise en valeur des données satellite ! 🚀
+        </div>
       </div>
 
       <div id="chart-bubles" style="height: 180px;" />
