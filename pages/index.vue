@@ -117,11 +117,3 @@ export default {
 }
 
 </script>
-
-<style>
-.bgMe {
-  background: url("~/assets/moi.jpg");
-  background-position: center;
-  background-size: cover;
-}
-</style>
