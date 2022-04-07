@@ -12,6 +12,7 @@
         </div>
       </div>
     </div>
+
     <div
       id="section-myself"
       class="h-screen grid content-center"
@@ -22,10 +23,27 @@
           je suis développeur Fullstack au sein d'une start-up
           dont l'expertise est le traitement et la mise en valeur des données satellite ! 🚀
         </div>
+
+        <br>
+
+        <div class="justify-self-center">
+          Mon parcours post-bac peut se résumer de la façon suivante :
+          <br>
+          <div class="grid place-items-center">
+            <div class="text-left justify-self-center w-auto border-t-4 border-b-4 pl-2 border-blue-400">
+              5️⃣ années d'études
+              <br>
+              4️⃣ diplômes et
+              <br>
+              4️⃣ années d'alternance au sein de 3️⃣ entreprises différentes.
+            </div>
+          </div>
+        </div>
+
+        <br>
       </div>
 
-      <div id="chart-bubles" style="height: 180px;" />
-      <div id="chart-timeline" style="height: 180px;" />
+      <div id="chart-timeline" class="px-10" style="" />
     </div>
   </div>
 </template>
