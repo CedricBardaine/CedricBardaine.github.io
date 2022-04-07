@@ -50,9 +50,9 @@
             <div class="text-left justify-self-center w-auto border-t-4 border-b-4 pl-2 border-green-400 py-1">
               <span class="text-blue-600 font-extrabold text-xl">5</span> années d'études
               <br>
-              <span class="text-blue-600 font-extrabold text-xl">5</span>  diplômes et
+              <span class="text-blue-600 font-extrabold text-xl">4</span>  diplômes et
               <br>
-              <span class="text-blue-600 font-extrabold text-xl">5</span>  années d'alternance au sein de <span class="text-blue-600 font-extrabold text-xl">5</span>  entreprises différentes.
+              <span class="text-blue-600 font-extrabold text-xl">4</span>  années d'alternance au sein de <span class="text-blue-600 font-extrabold text-xl">3</span>  entreprises différentes.
             </div>
           </div>
 
@@ -81,7 +81,7 @@
             <br>
             ainsi qu'en POO 🤘
             <br>
-            (des questions sur quels langages ou frameworks que je maitrise ? la réponse plus bas...)
+            (Vous vous demandez quels langages ou frameworks je maitrise ? la réponse plus bas...)
           </div>
         </div>
 
@@ -93,7 +93,7 @@
       id="section-my-projects"
       class="h-screen grid content-evenly bg-blue-600"
     >
-      <div id="centered-presentation-text" class="text-center text-lg px-10" />
+      <div id="" class="text-center text-lg px-10" />
     </div>
 
     <div
@@ -118,6 +118,20 @@ import { GoogleCharts } from 'google-charts'
 
 export default {
   name: 'IndexPage',
+
+  data () {
+    return {
+      lastKnownScrollYPosition: 0,
+      currentDiv: 0,
+      scrollDivsName: [
+        'section-me',
+        'section-myself',
+        'section-my-projects',
+        'section-my-skills',
+        'section-my-passions',
+        'section-my-projects']
+    }
+  },
 
   head () {
     return {
@@ -146,6 +160,39 @@ export default {
 
   mounted () {
     this.loadTimelineChart()
+
+    window.onscroll = function () {
+      const x = window.scrollX
+      const y = window.scrollY
+
+      window.scrollTo(x, y)
+    }
+
+    // document.addEventListener('scroll', function (e) {
+    //   if (window.scrollY > this.lastKnownScrollYPosition) {
+    //     console.log('down')
+    //     // scrollToDiv()
+    //   } else { console.log('up') }
+
+    //   this.lastKnownScrollYPosition = window.scrollY
+    //   // console.log(this.lastKnownScrollYPosition)
+    // })
+
+    const self = this
+    document.addEventListener('keydown', (event) => {
+      // const name = event.key
+      const code = event.code
+
+      if (code === 'ArrowDown' || code === 'ArrowRight') {
+        console.log('scrolldown')
+        self.scrollToDiv(3)
+      }
+      if (code === 'ArrowUp' || code === 'ArrowLeft') {
+        console.log('scrollup')
+
+        self.scrollToDiv(3)
+      }
+    }, false)
   },
 
   methods: {
@@ -195,7 +242,17 @@ export default {
           timeline: { colorByRowLabel: true }
         })
       }
+    },
+
+    scrollToDiv (idDiv) {
+      console.log(this.scrollDivsName[idDiv])
+      document.getElementById('section-my-skills').scrollIntoView({
+        behavior: 'smooth'
+      // block:    "start" | "center" | "end" | "nearest",
+      // inline:    "start" | "center" | "end" | "nearest",
+      })
     }
+
   }
 }
 
