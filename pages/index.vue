@@ -21,7 +21,6 @@
         je suis développeur Fullstack au sein d'une start-up dont l'expertise est le traitement et la mise en valeur des données sattelitte.
       </div>
 
-      <div id="chart1" style="height: 180px;" />
       <div id="chart-bubles" style="height: 180px;" />
       <div id="chart-timeline" style="height: 180px;" />
     </div>
