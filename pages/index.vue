@@ -91,9 +91,23 @@
 
     <div
       id="section-my-projects"
-      class="h-screen grid content-center bg-blue-600"
+      class="h-screen grid content-evenly bg-blue-600"
     >
       <div id="centered-presentation-text" class="text-center text-lg px-10" />
+    </div>
+
+    <div
+      id="section-my-skills"
+      class="h-screen grid content-evenly"
+    >
+      <div class="" />
+    </div>
+
+    <div
+      id="section-my-passions"
+      class="h-screen grid content-evenly bg-blue-600"
+    >
+      <div class="" />
     </div>
   </div>
 </template>
