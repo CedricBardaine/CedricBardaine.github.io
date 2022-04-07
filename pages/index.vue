@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div id="app" class="">
     <div
       id="section-me"
       class="h-screen grid content-center bgMe"
@@ -25,8 +25,8 @@
             justify-self-center
             bg-gradient-to-r from-blue-600 to-green-400 rounded-md
             text-white
-            w-max
             p-4
+            mx-6
           "
           >
             Salut ! Moi c'est Cédric,
@@ -71,8 +71,8 @@
             justify-self-center
             bg-gradient-to-r from-blue-600 to-green-400 rounded-md
             text-white
-            w-max
             p-4
+            mx-6
           "
           >
             J'ai donc un profil de développeur web fullstack, à l'aise sur la plupart des technos de la toile 😎
