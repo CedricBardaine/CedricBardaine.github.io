@@ -35,7 +35,30 @@ import { GoogleCharts } from 'google-charts'
 export default {
   name: 'IndexPage',
 
-  // GoogleCharts.api.visualization
+  head () {
+    return {
+      // script: [
+      //   {
+      //     src: 'https://www.gstatic.com/charts/loader.js'
+      //   }
+      // ],
+      title: 'Cédric BARDAINE'
+      // meta: [
+      //   // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+      //   // {
+      //   //   hid: 'description',
+      //   //   name: 'description',
+      //   //   content: 'My custom description'
+      //   // },
+      //   {
+      //     hid: 'description',
+      //     name: 'viewport',
+      //     content: 'width=device-width, initial-scale=1.0'
+      //   }
+
+      // ]
+    }
+  },
 
   mounted () {
     this.loadTimelineChart()
