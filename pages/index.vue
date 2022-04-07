@@ -21,7 +21,9 @@
         je suis développeur Fullstack au sein d'une start-up dont l'expertise est le traitement et la mise en valeur des données sattelitte.
       </div>
 
-      <div id="chart1" />
+      <div id="chart1" style="height: 180px;" />
+      <div id="chart-bubles" style="height: 180px;" />
+      <div id="chart-timeline" style="height: 180px;" />
     </div>
   </div>
 </template>
@@ -33,40 +35,81 @@ import { GoogleCharts } from 'google-charts'
 export default {
   name: 'IndexPage',
 
-  head () {
-    return {
-      // script: [
-      //   {
-      //     src: 'https://www.gstatic.com/charts/loader.js'
-      //   }
-      // ]
-      // title: this.title,
-      // meta: [
-      //   // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-      //   {
-      //     hid: 'description',
-      //     name: 'description',
-      //     content: 'My custom description'
-      //   }
-
-      // ]
-    }
-  },
+  // GoogleCharts.api.visualization
 
   mounted () {
-    // Load the charts library with a callback
-    GoogleCharts.load(drawChart)
+    this.loadPieExampleChart()
 
-    function drawChart () {
+    this.loadTimelineChart()
+  },
+
+  methods: {
+    loadPieExampleChart () {
+      // Load the charts library with a callback
+      GoogleCharts.load(drawChart)
+
+      function drawChart () {
       // Standard google charts functionality is available as GoogleCharts.api after load
-      const data = GoogleCharts.api.visualization.arrayToDataTable([
-        ['Chart thing', 'Chart amount'],
-        ['Lorem ipsum', 60],
-        ['Dolor sit', 22],
-        ['Sit amet', 18]
-      ])
-      const charttest = new GoogleCharts.api.visualization.PieChart(document.getElementById('chart1'))
-      charttest.draw(data)
+        const data = GoogleCharts.api.visualization.arrayToDataTable([
+          ['Chart thing', 'Chart amount'],
+          ['Lorem ipsum', 60],
+          ['Dolor sit', 22],
+          ['Sit amet', 18]
+        ])
+        const charttest = new GoogleCharts.api.visualization.PieChart(document.getElementById('chart1'))
+        charttest.draw(data)
+      }
+    },
+
+    // loadTimelineChart () {
+    //   GoogleCharts.api.charts.load('current', { packages: ['timeline'] })
+    //   GoogleCharts.api.charts.setOnLoadCallback(drawChart)
+    //   function drawChart () {
+    //     const container = document.getElementById('chart-timeline')
+    //     const chart = new GoogleCharts.api.visualization.Timeline(container)
+    //     const dataTable = new GoogleCharts.api.visualization.DataTable()
+
+    //     dataTable.addColumn({ type: 'string', id: 'School' })
+    //     dataTable.addColumn({ type: 'string', id: 'Name' })
+    //     dataTable.addColumn({ type: 'date', id: 'Start' })
+    //     dataTable.addColumn({ type: 'date', id: 'End' })
+    //     dataTable.addRows([
+    //       ['Entreprise', 'KERMAP', new Date(2020, 3, 30), new Date(2022, 2, 4)],
+
+    //       ['École', 'Master', new Date(1797, 2, 4), new Date(1801, 2, 4)],
+    //       ['Jefferson', 'Jefferson', new Date(1801, 2, 4), new Date(1809, 2, 4)]])
+
+    //     chart.draw(dataTable)
+    //   }
+    // },
+    loadTimelineChart () {
+      GoogleCharts.load(drawChart, { packages: ['timeline'] })
+      // GoogleCharts.api.charts.setOnLoadCallback(drawChart)
+      function drawChart () {
+        const container = document.getElementById('chart-timeline')
+        const chart = new GoogleCharts.api.visualization.Timeline(container)
+        const dataTable = new GoogleCharts.api.visualization.DataTable()
+
+        dataTable.addColumn({ type: 'string', id: 'School' })
+        dataTable.addColumn({ type: 'string', id: 'Name' })
+        dataTable.addColumn({ type: 'date', id: 'Start' })
+        dataTable.addColumn({ type: 'date', id: 'End' })
+
+        dataTable.addRows([
+          ['Entreprise', 'Quadisweb', new Date(2018, 8), new Date(2019, 7)],
+          ['Entreprise', 'Cegid', new Date(2019, 8), new Date(2020, 5)],
+          ['Entreprise', 'KERMAP', new Date(2020, 7), new Date(2022, 7)],
+
+          ['Diplôme', 'Bac S', new Date(2016, 8), new Date(2017, 5)],
+          ['Diplôme', 'DUT', new Date(2017, 8), new Date(2019, 5)],
+          ['Diplôme', 'Bachelor développeur web  +  Titre professionnel Concepteur Développeur d\'Application', new Date(2019, 8), new Date(2020, 5)],
+          ['Diplôme', 'Master développeur fullstack', new Date(2020, 8), new Date(2022, 5)]
+        ])
+
+        chart.draw(dataTable, {
+          timeline: { colorByRowLabel: true }
+        })
+      }
     }
   }
 }
