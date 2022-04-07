@@ -38,8 +38,6 @@ export default {
   // GoogleCharts.api.visualization
 
   mounted () {
-    this.loadPieExampleChart()
-
     this.loadTimelineChart()
   },
 
@@ -61,27 +59,6 @@ export default {
       }
     },
 
-    // loadTimelineChart () {
-    //   GoogleCharts.api.charts.load('current', { packages: ['timeline'] })
-    //   GoogleCharts.api.charts.setOnLoadCallback(drawChart)
-    //   function drawChart () {
-    //     const container = document.getElementById('chart-timeline')
-    //     const chart = new GoogleCharts.api.visualization.Timeline(container)
-    //     const dataTable = new GoogleCharts.api.visualization.DataTable()
-
-    //     dataTable.addColumn({ type: 'string', id: 'School' })
-    //     dataTable.addColumn({ type: 'string', id: 'Name' })
-    //     dataTable.addColumn({ type: 'date', id: 'Start' })
-    //     dataTable.addColumn({ type: 'date', id: 'End' })
-    //     dataTable.addRows([
-    //       ['Entreprise', 'KERMAP', new Date(2020, 3, 30), new Date(2022, 2, 4)],
-
-    //       ['École', 'Master', new Date(1797, 2, 4), new Date(1801, 2, 4)],
-    //       ['Jefferson', 'Jefferson', new Date(1801, 2, 4), new Date(1809, 2, 4)]])
-
-    //     chart.draw(dataTable)
-    //   }
-    // },
     loadTimelineChart () {
       GoogleCharts.load(drawChart, { packages: ['timeline'] })
       // GoogleCharts.api.charts.setOnLoadCallback(drawChart)
