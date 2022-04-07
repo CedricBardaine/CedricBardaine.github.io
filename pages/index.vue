@@ -15,35 +15,85 @@
 
     <div
       id="section-myself"
-      class="h-screen grid content-center"
+      class="h-screen  grid content-evenly "
     >
-      <div id="centered-presentation-text" class="text-center text-lg px-10">
-        <div class="justify-self-center">
-          Salut ! Moi c'est Cédric,
-          je suis développeur Fullstack au sein d'une start-up
-          dont l'expertise est le traitement et la mise en valeur des données satellite ! 🚀
-        </div>
-
-        <br>
-
-        <div class="justify-self-center">
-          Mon parcours post-bac peut se résumer de la façon suivante :
-          <br>
-          <div class="grid place-items-center">
-            <div class="text-left justify-self-center w-auto border-t-4 border-b-4 pl-2 border-blue-400">
-              5️⃣ années d'études
-              <br>
-              4️⃣ diplômes et
-              <br>
-              4️⃣ années d'alternance au sein de 3️⃣ entreprises différentes.
-            </div>
+      <div id="centered-presentation-text" class="">
+        <div class="grid justify-items-center">
+          <div
+            class="
+            text-lg text-center
+            justify-self-center
+            bg-gradient-to-r from-blue-600 to-green-400 rounded-md
+            text-white
+            w-max
+            p-4
+          "
+          >
+            Salut ! Moi c'est Cédric,
+            je suis développeur Fullstack au sein d'une start-up
+            <br>
+            dont l'expertise est le traitement et la mise en valeur des données satellite ! 🚀
           </div>
         </div>
 
         <br>
       </div>
 
-      <div id="chart-timeline" class="px-10" style="" />
+      <div>
+        <div class="justify-self-center">
+          <div class="grid place-items-center">
+            Résumé de mon parcours post-bac
+
+            <br>
+            <br>
+
+            <div class="text-left justify-self-center w-auto border-t-4 border-b-4 pl-2 border-green-400 py-1">
+              <span class="text-blue-600 font-extrabold text-xl">5</span> années d'études
+              <br>
+              <span class="text-blue-600 font-extrabold text-xl">5</span>  diplômes et
+              <br>
+              <span class="text-blue-600 font-extrabold text-xl">5</span>  années d'alternance au sein de <span class="text-blue-600 font-extrabold text-xl">5</span>  entreprises différentes.
+            </div>
+          </div>
+
+          <br>
+          <br>
+        </div>
+
+        <div id="chart-timeline" class="px-10" style="" />
+      </div>
+
+      <div id="centered-skills-text" class="">
+        <div class="grid justify-items-center">
+          <div
+            class="
+            text-lg text-center
+            justify-self-center
+            bg-gradient-to-r from-blue-600 to-green-400 rounded-md
+            text-white
+            w-max
+            p-4
+          "
+          >
+            J'ai donc un profil de développeur web fullstack, à l'aise sur la plupart des technos de la toile 😎
+            <br>
+            Mais j'ai aussi des compétences en mobile avec notamment le framework de développement hybride Flutter
+            <br>
+            ainsi qu'en POO 🤘
+            <br>
+            (des questions sur quels langages ou frameworks que je maitrise ? la réponse plus bas...)
+          </div>
+        </div>
+
+        <br>
+      </div>
+    </div>
+
+    <div
+      id="section-my-projects"
+      class="h-screen grid content-center bg-blue-600"
+    >
+      <div id="centered-presentation-text" class="text-center text-lg px-10" />
     </div>
   </div>
 </template>
@@ -127,6 +177,7 @@ export default {
         ])
 
         chart.draw(dataTable, {
+          colors: ['#2563eb', '#34d399'],
           timeline: { colorByRowLabel: true }
         })
       }
