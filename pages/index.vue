@@ -109,6 +109,13 @@
     >
       <div class="" />
     </div>
+
+    <div
+      id="section-my-links"
+      class="h-screen grid content-evenly bg-green-400"
+    >
+      <div class="" />
+    </div>
   </div>
 </template>
 
@@ -129,7 +136,8 @@ export default {
         'section-my-projects',
         'section-my-skills',
         'section-my-passions',
-        'section-my-projects']
+        'section-my-links'
+      ]
     }
   },
 
@@ -161,12 +169,54 @@ export default {
   mounted () {
     this.loadTimelineChart()
 
-    window.onscroll = function () {
-      const x = window.scrollX
-      const y = window.scrollY
+    document.getElementById('section-me')
+      .addEventListener('wheel', (evt) => {
+        evt.preventDefault()
+        if (evt.deltaY > 0) { this.scrollToDiv(1) } else if (evt.deltaY < 0) { this.scrollToDiv(0) }
+      })
 
-      window.scrollTo(x, y)
-    }
+    document.getElementById('section-myself')
+      .addEventListener('wheel', (evt) => {
+        evt.preventDefault()
+        if (evt.deltaY > 0) { this.scrollToDiv(2) } else if (evt.deltaY < 0) { this.scrollToDiv(0) }
+      })
+
+    document.getElementById('section-my-projects')
+      .addEventListener('wheel', (evt) => {
+        evt.preventDefault()
+        if (evt.deltaY > 0) { this.scrollToDiv(3) } else if (evt.deltaY < 0) { this.scrollToDiv(1) }
+      })
+
+    document.getElementById('section-my-skills')
+      .addEventListener('wheel', (evt) => {
+        evt.preventDefault()
+        if (evt.deltaY > 0) { this.scrollToDiv(4) } else if (evt.deltaY < 0) { this.scrollToDiv(2) }
+      })
+
+    document.getElementById('section-my-passions')
+      .addEventListener('wheel', (evt) => {
+        evt.preventDefault()
+        if (evt.deltaY > 0) { this.scrollToDiv(5) } else if (evt.deltaY < 0) { this.scrollToDiv(3) }
+      })
+
+    document.getElementById('section-my-links')
+      .addEventListener('wheel', (evt) => {
+        evt.preventDefault()
+        if (evt.deltaY > 0) { this.scrollToDiv(5) } else if (evt.deltaY < 0) { this.scrollToDiv(4) }
+      })
+
+    //
+
+    //
+
+    //
+
+    // window.onscroll = function () {
+    //   const x = window.scrollX
+    //   const y = window.scrollY
+
+    //   window.scrollTo(x, y)
+    // }
 
     // document.addEventListener('scroll', function (e) {
     //   if (window.scrollY > this.lastKnownScrollYPosition) {
@@ -185,12 +235,12 @@ export default {
 
       if (code === 'ArrowDown' || code === 'ArrowRight') {
         console.log('scrolldown')
-        self.scrollToDiv(3)
+        self.scrollToDiv(1)
       }
       if (code === 'ArrowUp' || code === 'ArrowLeft') {
         console.log('scrollup')
 
-        self.scrollToDiv(3)
+        self.scrollToDiv(1)
       }
     }, false)
   },
@@ -253,10 +303,34 @@ export default {
       // // inline:    "start" | "center" | "end" | "nearest",
       // })
 
-      for (let ind = window.innerHeight / 50; ind <= window.innerHeight; ind += window.innerHeight / 50) {
-        window.scrollTo(0, ind)
+      const stepheights = []
+      for (let ind = 0; ind <= 7; ind++) {
+        stepheights[ind] = window.innerHeight * ind
+      }
 
-        await new Promise(resolve => setTimeout(resolve, 2))
+      console.log(stepheights)
+
+      const heightBeforeScroll = window.scrollY
+      // const endheight = window.innerHeight
+      const endheight = stepheights[idDiv]
+      console.log(endheight)
+
+      const stepCoef = 100
+      if (endheight > heightBeforeScroll) {
+        const stepHeight = (endheight - heightBeforeScroll) / stepCoef
+        for (let ind = 0; ind <= stepCoef; ind++) {
+          // window.scrollTo(0, window.scrollY + stepHeight)
+          window.scrollBy(0, stepHeight)
+
+          await new Promise(resolve => setTimeout(resolve, 1))
+        }
+      } else if (endheight < heightBeforeScroll) {
+        const stepHeight = (heightBeforeScroll - endheight) / stepCoef
+        for (let ind = 0; ind <= stepCoef; ind++) {
+          window.scrollBy(0, -stepHeight)
+
+          await new Promise(resolve => setTimeout(resolve, 1))
+        }
       }
 
       // window.scrollTo({
