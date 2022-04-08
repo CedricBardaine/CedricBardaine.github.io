@@ -244,13 +244,26 @@ export default {
       }
     },
 
-    scrollToDiv (idDiv) {
+    async scrollToDiv (idDiv) {
       console.log(this.scrollDivsName[idDiv])
-      document.getElementById('section-my-skills').scrollIntoView({
-        behavior: 'smooth'
-      // block:    "start" | "center" | "end" | "nearest",
-      // inline:    "start" | "center" | "end" | "nearest",
-      })
+
+      // document.getElementById(this.scrollDivsName[idDiv]).scrollIntoView({
+      //   behavior: 'smooth'
+      // // block:    "start" | "center" | "end" | "nearest",
+      // // inline:    "start" | "center" | "end" | "nearest",
+      // })
+
+      for (let ind = window.innerHeight / 50; ind <= window.innerHeight; ind += window.innerHeight / 50) {
+        window.scrollTo(0, ind)
+
+        await new Promise(resolve => setTimeout(resolve, 2))
+      }
+
+      // window.scrollTo({
+      //   top: ind,
+      //   left: 0
+      // // behavior: 'smooth'
+      // })
     }
 
   }
