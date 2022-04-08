@@ -50,9 +50,9 @@
             <div class="text-left justify-self-center w-auto border-t-4 border-b-4 pl-2 border-green-400 py-1">
               <span class="text-blue-600 font-extrabold text-xl">5</span> années d'études
               <br>
-              <span class="text-blue-600 font-extrabold text-xl">5</span>  diplômes et
+              <span class="text-blue-600 font-extrabold text-xl">4</span>  diplômes et
               <br>
-              <span class="text-blue-600 font-extrabold text-xl">5</span>  années d'alternance au sein de <span class="text-blue-600 font-extrabold text-xl">5</span>  entreprises différentes.
+              <span class="text-blue-600 font-extrabold text-xl">4</span>  années d'alternance au sein de <span class="text-blue-600 font-extrabold text-xl">3</span>  entreprises différentes.
             </div>
           </div>
 
@@ -81,7 +81,7 @@
             <br>
             ainsi qu'en POO 🤘
             <br>
-            (des questions sur quels langages ou frameworks que je maitrise ? la réponse plus bas...)
+            (Vous vous demandez quels langages ou frameworks je maitrise ? la réponse plus bas...)
           </div>
         </div>
 
@@ -93,7 +93,7 @@
       id="section-my-projects"
       class="h-screen grid content-evenly bg-blue-600"
     >
-      <div id="centered-presentation-text" class="text-center text-lg px-10" />
+      <div id="" class="text-center text-lg px-10" />
     </div>
 
     <div
@@ -109,6 +109,13 @@
     >
       <div class="" />
     </div>
+
+    <div
+      id="section-my-links"
+      class="h-screen grid content-evenly bg-green-400"
+    >
+      <div class="" />
+    </div>
   </div>
 </template>
 
@@ -118,6 +125,25 @@ import { GoogleCharts } from 'google-charts'
 
 export default {
   name: 'IndexPage',
+
+  data () {
+    return {
+      lastKnownScrollYPosition: 0,
+      currentDiv: 0,
+      scrollDivsName: [
+        'section-me',
+        'section-myself',
+        'section-my-projects',
+        'section-my-skills',
+        'section-my-passions',
+        'section-my-links'
+      ]
+    }
+  },
+
+  //
+
+  //
 
   head () {
     return {
@@ -144,9 +170,19 @@ export default {
     }
   },
 
+  //
+
+  //
+
   mounted () {
     this.loadTimelineChart()
+
+    this.addScrollEventHandlers()
   },
+
+  //
+
+  //
 
   methods: {
     loadPieExampleChart () {
@@ -165,6 +201,8 @@ export default {
         charttest.draw(data)
       }
     },
+
+    //
 
     loadTimelineChart () {
       GoogleCharts.load(drawChart, { packages: ['timeline'] })
@@ -195,7 +233,60 @@ export default {
           timeline: { colorByRowLabel: true }
         })
       }
+    },
+
+    //
+
+    scrollToDiv (divNameId) {
+      const topOffset = document.getElementById(divNameId).getBoundingClientRect().top
+
+      window.scrollBy({
+        top: topOffset,
+        left: 0,
+        behavior: 'smooth'
+      })
+    },
+
+    //
+
+    addScrollEventHandlers () {
+      document.getElementById('section-me')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[1]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
+        })
+
+      document.getElementById('section-myself')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[2]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
+        })
+
+      document.getElementById('section-my-projects')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[3]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[1]) }
+        })
+
+      document.getElementById('section-my-skills')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[4]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[2]) }
+        })
+
+      document.getElementById('section-my-passions')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[3]) }
+        })
+
+      document.getElementById('section-my-links')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[4]) }
+        })
     }
+
   }
 }
 
