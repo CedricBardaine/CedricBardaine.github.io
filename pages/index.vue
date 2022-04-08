@@ -172,37 +172,37 @@ export default {
     document.getElementById('section-me')
       .addEventListener('wheel', (evt) => {
         evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(1) } else if (evt.deltaY < 0) { this.scrollToDiv(0) }
+        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[1]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
       })
 
     document.getElementById('section-myself')
       .addEventListener('wheel', (evt) => {
         evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(2) } else if (evt.deltaY < 0) { this.scrollToDiv(0) }
+        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[2]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
       })
 
     document.getElementById('section-my-projects')
       .addEventListener('wheel', (evt) => {
         evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(3) } else if (evt.deltaY < 0) { this.scrollToDiv(1) }
+        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[3]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[1]) }
       })
 
     document.getElementById('section-my-skills')
       .addEventListener('wheel', (evt) => {
         evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(4) } else if (evt.deltaY < 0) { this.scrollToDiv(2) }
+        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[4]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[2]) }
       })
 
     document.getElementById('section-my-passions')
       .addEventListener('wheel', (evt) => {
         evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(5) } else if (evt.deltaY < 0) { this.scrollToDiv(3) }
+        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[3]) }
       })
 
     document.getElementById('section-my-links')
       .addEventListener('wheel', (evt) => {
         evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(5) } else if (evt.deltaY < 0) { this.scrollToDiv(4) }
+        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[4]) }
       })
 
     //
@@ -294,50 +294,12 @@ export default {
       }
     },
 
-    async scrollToDiv (idDiv) {
-      console.log(this.scrollDivsName[idDiv])
+    /* async */ scrollToDiv (divNameId) {
+      const topOffset = document.getElementById(divNameId).getBoundingClientRect().top
 
-      // document.getElementById(this.scrollDivsName[idDiv]).scrollIntoView({
-      //   behavior: 'smooth'
-      // // block:    "start" | "center" | "end" | "nearest",
-      // // inline:    "start" | "center" | "end" | "nearest",
-      // })
+      console.log(topOffset)
 
-      const stepheights = []
-      for (let ind = 0; ind <= 7; ind++) {
-        stepheights[ind] = window.innerHeight * ind
-      }
-
-      console.log(stepheights)
-
-      const heightBeforeScroll = window.scrollY
-      // const endheight = window.innerHeight
-      const endheight = stepheights[idDiv]
-      console.log(endheight)
-
-      const stepCoef = 100
-      if (endheight > heightBeforeScroll) {
-        const stepHeight = (endheight - heightBeforeScroll) / stepCoef
-        for (let ind = 0; ind <= stepCoef; ind++) {
-          // window.scrollTo(0, window.scrollY + stepHeight)
-          window.scrollBy(0, stepHeight)
-
-          await new Promise(resolve => setTimeout(resolve, 1))
-        }
-      } else if (endheight < heightBeforeScroll) {
-        const stepHeight = (heightBeforeScroll - endheight) / stepCoef
-        for (let ind = 0; ind <= stepCoef; ind++) {
-          window.scrollBy(0, -stepHeight)
-
-          await new Promise(resolve => setTimeout(resolve, 1))
-        }
-      }
-
-      // window.scrollTo({
-      //   top: ind,
-      //   left: 0
-      // // behavior: 'smooth'
-      // })
+      window.scrollBy(0, topOffset)
     }
 
   }
