@@ -294,15 +294,14 @@ export default {
       }
     },
 
-    async scrollToDiv (divNameId) {
+    scrollToDiv (divNameId) {
       const topOffset = document.getElementById(divNameId).getBoundingClientRect().top
 
-      const step = topOffset / 5
-      for (let ind = 0; ind < 5; ind++) {
-        window.scrollBy(0, step)
-
-        await new Promise(resolve => setTimeout(resolve, 40))
-      }
+      window.scrollBy({
+        top: topOffset,
+        left: 0,
+        behavior: 'smooth'
+      })
     }
 
   }
