@@ -294,12 +294,15 @@ export default {
       }
     },
 
-    /* async */ scrollToDiv (divNameId) {
+    async scrollToDiv (divNameId) {
       const topOffset = document.getElementById(divNameId).getBoundingClientRect().top
 
-      console.log(topOffset)
+      const step = topOffset / 5
+      for (let ind = 0; ind < 5; ind++) {
+        window.scrollBy(0, step)
 
-      window.scrollBy(0, topOffset)
+        await new Promise(resolve => setTimeout(resolve, 40))
+      }
     }
 
   }
