@@ -141,6 +141,10 @@ export default {
     }
   },
 
+  //
+
+  //
+
   head () {
     return {
       // script: [
@@ -166,84 +170,19 @@ export default {
     }
   },
 
+  //
+
+  //
+
   mounted () {
     this.loadTimelineChart()
 
-    document.getElementById('section-me')
-      .addEventListener('wheel', (evt) => {
-        evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[1]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
-      })
-
-    document.getElementById('section-myself')
-      .addEventListener('wheel', (evt) => {
-        evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[2]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
-      })
-
-    document.getElementById('section-my-projects')
-      .addEventListener('wheel', (evt) => {
-        evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[3]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[1]) }
-      })
-
-    document.getElementById('section-my-skills')
-      .addEventListener('wheel', (evt) => {
-        evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[4]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[2]) }
-      })
-
-    document.getElementById('section-my-passions')
-      .addEventListener('wheel', (evt) => {
-        evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[3]) }
-      })
-
-    document.getElementById('section-my-links')
-      .addEventListener('wheel', (evt) => {
-        evt.preventDefault()
-        if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[4]) }
-      })
-
-    //
-
-    //
-
-    //
-
-    // window.onscroll = function () {
-    //   const x = window.scrollX
-    //   const y = window.scrollY
-
-    //   window.scrollTo(x, y)
-    // }
-
-    // document.addEventListener('scroll', function (e) {
-    //   if (window.scrollY > this.lastKnownScrollYPosition) {
-    //     console.log('down')
-    //     // scrollToDiv()
-    //   } else { console.log('up') }
-
-    //   this.lastKnownScrollYPosition = window.scrollY
-    //   // console.log(this.lastKnownScrollYPosition)
-    // })
-
-    const self = this
-    document.addEventListener('keydown', (event) => {
-      // const name = event.key
-      const code = event.code
-
-      if (code === 'ArrowDown' || code === 'ArrowRight') {
-        console.log('scrolldown')
-        self.scrollToDiv(1)
-      }
-      if (code === 'ArrowUp' || code === 'ArrowLeft') {
-        console.log('scrollup')
-
-        self.scrollToDiv(1)
-      }
-    }, false)
+    this.addScrollEventHandlers()
   },
+
+  //
+
+  //
 
   methods: {
     loadPieExampleChart () {
@@ -262,6 +201,8 @@ export default {
         charttest.draw(data)
       }
     },
+
+    //
 
     loadTimelineChart () {
       GoogleCharts.load(drawChart, { packages: ['timeline'] })
@@ -294,6 +235,8 @@ export default {
       }
     },
 
+    //
+
     scrollToDiv (divNameId) {
       const topOffset = document.getElementById(divNameId).getBoundingClientRect().top
 
@@ -302,6 +245,46 @@ export default {
         left: 0,
         behavior: 'smooth'
       })
+    },
+
+    //
+
+    addScrollEventHandlers () {
+      document.getElementById('section-me')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[1]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
+        })
+
+      document.getElementById('section-myself')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[2]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
+        })
+
+      document.getElementById('section-my-projects')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[3]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[1]) }
+        })
+
+      document.getElementById('section-my-skills')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[4]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[2]) }
+        })
+
+      document.getElementById('section-my-passions')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[3]) }
+        })
+
+      document.getElementById('section-my-links')
+        .addEventListener('wheel', (evt) => {
+          evt.preventDefault()
+          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[4]) }
+        })
     }
 
   }
