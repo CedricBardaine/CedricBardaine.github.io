@@ -247,8 +247,26 @@
       >
         Mes skills
       </div>
+      <div>
+        <div class="flex flex-row place-content-center  ">
+          <button
+            class="mx-2"
+            :class="skillsType == 'frameworks' ? 'btn' : 'btn-deactivated'"
+            @click="skillsType = 'frameworks' ; loadBubblesChart()"
+          >
+            Frameworks
+          </button>
+          <button
+            class="mx-2"
+            :class="skillsType == 'languages' ? 'btn' : 'btn-deactivated'"
+            @click="skillsType = 'languages' ; loadBubblesChart()"
+          >
+            Langages
+          </button>
+        </div>
 
-      <div id="chart-bubbles" class="px-5 lg:px-40" style="" />
+        <div id="chart-bubbles" class="px-5 lg:px-40" style="" />
+      </div>
     </div>
 
     <!--  -->
@@ -291,7 +309,9 @@ export default {
         'section-my-links'
       ],
 
-      mouseOver_bubblesChartDiv: false
+      mouseOver_bubblesChartDiv: false,
+
+      skillsType: 'frameworks' // || languages
     }
   },
 
@@ -325,6 +345,36 @@ export default {
   },
 
   //
+  //
+
+  computed: {
+    skillsDisplayed () {
+      switch (this.skillsType) {
+        case 'frameworks':
+          return [
+            ['Assembleur',
+              new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
+              1, 'etudes', 2],
+            ['VueJS',
+              new Date(2019, 9, 15),
+              5, 'pro', 4 * 12 * 2],
+            ['React',
+              new Date(2019, 2, 1),
+              2, 'perso', 1]
+          ]
+        case 'languages':
+          return [
+            ['Test',
+              new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
+              1, 'etudes', 3]
+          ]
+
+        default: return []
+      }
+    }
+  },
+
+  //
 
   //
 
@@ -340,27 +390,16 @@ export default {
 
     this.loadTimelineChart()
 
-    this.loadBubblesChart([
-      ['Assembleur',
-        new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
-        1,
-        'etudes',
-        2
-      ],
-      ['VueJS',
-        new Date(2019, 9, 15),
-        5,
-        'pro',
-        4 * 12 * 2
-      ],
-      ['React',
-        new Date(2019, 2, 1),
-        2,
-        'perso',
-        1
-      ]])
+    this.loadBubblesChart()
 
     this.addScrollEventHandlers()
+
+    // Resize chart(s) on window resize, like this, it only resize when width grows.
+    // window.addEventListener('resize', () => {
+    //   this.$nextTick(() => {
+    //     this.loadBubblesChart()
+    //   })
+    // })
   },
 
   //
@@ -420,7 +459,7 @@ export default {
 
     //
 
-    loadBubblesChart (skillsData = [[]]) {
+    loadBubblesChart (skillsData = this.skillsDisplayed) {
       GoogleCharts.load(drawChart, {
         packages: ['corechart']
       })
