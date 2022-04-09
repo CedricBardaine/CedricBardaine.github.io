@@ -15,5 +15,12 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  // 0 : nothing
+  // 1 : warning
+  // 2 : error
+  rules: {
+    'comma-dangle': 0,
+    'no-trailing-spaces': 1,
+    'no-multiple-empty-lines': 1,
+  }
 }
