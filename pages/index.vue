@@ -265,7 +265,7 @@
           </button>
         </div>
 
-        <div id="chart-bubbles" class="px-5 lg:px-40" style="" />
+        <div id="chart-bubbles" class="px-5 lg:px-40" style="height: 50vh" />
       </div>
     </div>
 
