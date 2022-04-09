@@ -349,6 +349,15 @@ export default {
 
   computed: {
     skillsDisplayed () {
+      /*
+        Niveaux de maitrise :
+        1 : trop faible ou trop loin dans le temps pour encore parler de maitrise
+        2 : minimale
+        3 : bonnes connaissances théoriques
+        4 : bonnes connaissances et une ou plusieurs mise en pratique
+        5 : maitrise
+        */
+
       switch (this.skillsType) {
         case 'frameworks':
           return [
@@ -364,9 +373,30 @@ export default {
           ]
         case 'languages':
           return [
-            ['Test',
-              new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
-              1, 'etudes', 3]
+            ['Java',
+              new Date(2017, 9 - 1, 1),
+              4, 'etudes', 4 * 12 * 3],
+            ['HTML',
+              new Date(2017, 10 - 1, 1),
+              4, 'etudes', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
+            ['CSS',
+              new Date(2017, 11 - 1, 1),
+              4, 'pro', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
+            ['Javascript',
+              new Date(2017, 12 - 1, 1),
+              5, 'pro', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
+            ['SQL',
+              new Date(2017, 13 - 1, 1),
+              5, 'pro', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
+
+            ['PHP',
+              new Date(2018, 9 - 1, 1),
+              4, 'pro', 4 * 12],
+
+            ['Typescript',
+              new Date(2020, 1 - 1, 1),
+              4, 'etudes', 6 * 4],
+
           ]
 
         default: return []
@@ -407,6 +437,10 @@ export default {
   //
 
   methods: {
+    weeksBetween2Dates (date1, date2) {
+      return Math.ceil(
+        ((date1.getTime() - date2.getTime()) / (1000 * 3600 * 24) / 7))
+    },
     loadPieExampleChart () {
       // Load the charts library with a callback
       GoogleCharts.load(drawChart)
@@ -472,15 +506,6 @@ export default {
             ['ID', 'Date', 'Maitrise', 'Context', 'Nombre de semaines passées dessus'],
             ...skillsData
           ])
-
-        /*
-        Niveaux de maitrise :
-        1 : trop faible ou trop loin dans le temps pour encore parler de maitrise
-        2 : minimale
-        3 : bonnes connaissances thériques
-        4 : bonnes connaissances et une ou plusieurs mise en pratique
-        5 : maitrise
-        */
 
         const options = {
           // title: 'Skills',
