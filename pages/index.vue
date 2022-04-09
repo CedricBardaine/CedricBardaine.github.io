@@ -5,7 +5,7 @@
       class="h-screen grid content-center bgMe"
     >
       <div class="justify-self-center">
-        <div class="text-4xl lg:text-9xl text-center bg-gray-50 bg-opacity-50 hover:bg-opacity-75 ease-linear duration-100 px-8 py-4">
+        <div class="text-4xl lg:text-9xl text-center bg-gray-50 bg-opacity-25 hover:bg-opacity-50 ease-linear duration-100 px-8 py-4">
           Cédric
           <br>
           BARDAINE
@@ -236,7 +236,19 @@
       id="section-my-skills"
       class="h-screen grid content-evenly"
     >
-      <div class="" />
+      <div
+        class="
+        text-4xl text-center
+        justify-self-center
+        text-blue-600
+        p-4
+        mx-6
+      "
+      >
+        Toutes mes compétences
+      </div>
+
+      <div id="chart-bubbles" class="px-5 lg:px-40" style="" />
     </div>
 
     <!--  -->
@@ -317,6 +329,8 @@ export default {
   mounted () {
     this.loadTimelineChart()
 
+    this.loadBubblesChart()
+
     this.addScrollEventHandlers()
   },
 
@@ -372,6 +386,103 @@ export default {
           colors: ['#2563eb', '#34d399'],
           timeline: { colorByRowLabel: true }
         })
+      }
+    },
+
+    //
+
+    loadBubblesChart () {
+      GoogleCharts.load(drawChart, {
+        packages: ['corechart']
+      })
+
+      // un champs qui filtre quel techno, un combobox avec en items un [].map(des noms) et en fonctoin de la valeur du combobox on [].filter(== au nom) l' [] qui est affichées
+
+      function drawChart () {
+        const data = GoogleCharts.api.visualization.arrayToDataTable([
+          ['ID', 'Date', 'Maitrise', 'Context', 'Nombre de semaines passées dessus'],
+          ['Assembleur',
+            new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
+            1,
+            'etudes',
+            2
+          ],
+          ['VueJS',
+            new Date(2019, 9, 15),
+            5,
+            'pro',
+            4 * 12 * 2
+          ],
+          ['React',
+            new Date(2019, 2, 1),
+            2,
+            'perso',
+            1
+          ]
+        ])
+
+        /*
+        Niveaux de maitrise :
+        1 : trop faible ou trop loin dans le temps pour encore parler de maitrise
+        2 : minimale
+        3 : bonnes connaissances thériques
+        4 : bonnes connaissances et une ou plusieurs mise en pratique
+        5 : maitrise
+        */
+
+        const options = {
+          title: 'Skills',
+          hAxis: {
+            title: '',
+            format: 'MMM yyyy',
+            ticks: [
+              new Date(2017, 0),
+              new Date(2018, 0),
+              new Date(2019, 0),
+              new Date(2020, 0)
+            ],
+
+            minorGridlines: {
+              count: -1
+            }
+
+          },
+
+          /* ,
+
+          chartArea : {
+          top : 0
+          } */
+
+          vAxis: {
+            title: 'Maitrise',
+
+            maxValue: 6,
+            minValue: 0,
+            minorGridlines: {
+              count: 0
+            },
+            ticks: [
+              1, 2, 3, 4, 5
+            ]
+          },
+          bubble: {
+            textStyle: {
+              fontSize: 11
+            }
+          },
+
+          explorer: {
+            action: [' dragToZoom'],
+            zoomDelta: 1.1,
+            axis: 'horizontal',
+            keepInBounds: true
+          }
+
+        }
+
+        const chart = new GoogleCharts.api.visualization.BubbleChart(document.getElementById('chart-bubbles'))
+        chart.draw(data, options)
       }
     },
 
