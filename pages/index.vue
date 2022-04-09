@@ -13,6 +13,8 @@
       </div>
     </div>
 
+    <!--  -->
+
     <div
       id="section-myself"
       class="h-screen  grid content-evenly "
@@ -89,12 +91,103 @@
       </div>
     </div>
 
+    <!--  -->
+
     <div
       id="section-my-projects"
       class="h-screen grid content-evenly bg-blue-600"
     >
       <div id="" class="text-center text-lg px-10" />
+
+      <div
+        class="
+        text-4xl text-center
+        justify-self-center
+        text-white
+        p-4
+        mx-6
+      "
+      >
+        Quelques projets notables
+      </div>
+
+      <div class="flex flex-row place-content-around flex-wrap">
+        <button
+          class="
+          basis-1/3
+
+          text-2xl
+          text-center
+          text-green-600
+
+          rounded-full bg-white
+          w-48 h-48
+          p-4
+          mx-6
+
+          transform transition duration-500 hover:scale-125
+
+          flex
+          items-center
+          justify-center
+          "
+        >
+          <div class="hover:rotate-125">
+            Explor'ea
+          </div>
+        </button>
+        <button
+          class="
+          basis-1/3
+
+          text-2xl
+          text-center
+          text-green-600
+
+          rounded-full bg-white
+          w-48 h-48
+          p-4
+          mx-6
+
+          transform transition duration-500 hover:scale-125
+
+          flex
+          items-center
+          justify-center
+          "
+        >
+          <div class="hover:rotate-125">
+            Ad Astra
+          </div>
+        </button>
+        <button
+          class="
+          basis-1/3
+
+          text-2xl
+          text-center
+          text-green-600
+
+          rounded-full bg-white
+          w-48 h-48
+          p-4
+          mx-6
+
+          transform transition duration-500 hover:scale-125
+
+          flex
+          items-center
+          justify-center
+          "
+        >
+          <div class="hover:rotate-125">
+            Online Progress Bars
+          </div>
+        </button>
+      </div>
     </div>
+
+    <!--  -->
 
     <div
       id="section-my-skills"
@@ -103,12 +196,16 @@
       <div class="" />
     </div>
 
+    <!--  -->
+
     <div
       id="section-my-passions"
       class="h-screen grid content-evenly bg-blue-600"
     >
       <div class="" />
     </div>
+
+    <!--  -->
 
     <div
       id="section-my-links"
