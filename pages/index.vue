@@ -112,20 +112,18 @@
       </div>
 
       <div class="flex flex-row place-content-around flex-wrap">
-        <button
+        <div
           class="
           basis-1/3
 
           text-2xl
           text-center
-          text-green-600
+          text-gray-500
 
           rounded-full bg-white
           w-48 h-48
           p-4
           mx-6
-
-          transform transition duration-500 hover:scale-125
 
           flex
           items-center
@@ -135,8 +133,8 @@
           <div class="hover:rotate-125">
             Explor'ea
           </div>
-        </button>
-        <button
+        </div>
+        <a
           class="
           basis-1/3
 
@@ -155,12 +153,34 @@
           items-center
           justify-center
           "
+
+          href="https://ad-astra.netlify.app"
+          target="_blank"
         >
           <div class="hover:rotate-125">
             Ad Astra
+            <br>
+            <div
+              class="
+              flex
+              items-center
+              justify-center"
+            >
+              <svg
+                class="h-6 w-6 text-green-600"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >  <path stroke="none" d="M0 0h24v24H0z" />  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />  <line x1="10" y1="14" x2="20" y2="4" />  <polyline points="15 4 20 4 20 9" /></svg>
+            </div>
           </div>
-        </button>
-        <button
+        </a>
+        <a
           class="
           basis-1/3
 
@@ -179,11 +199,32 @@
           items-center
           justify-center
           "
+
+          href="https://cedricbardaine.github.io/online_progress_bars"
+          target="_blank"
         >
           <div class="hover:rotate-125">
             Online Progress Bars
-          </div>
-        </button>
+            <br>
+            <div
+              class="
+              flex
+              items-center
+              justify-center"
+            >
+              <svg
+                class="h-6 w-6 text-green-600"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >  <path stroke="none" d="M0 0h24v24H0z" />  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />  <line x1="10" y1="14" x2="20" y2="4" />  <polyline points="15 4 20 4 20 9" /></svg>
+            </div>
+          </div></a>
       </div>
     </div>
 
