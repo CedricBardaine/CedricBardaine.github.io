@@ -60,7 +60,7 @@
           <br>
         </div>
 
-        <div id="chart-timeline" class="px-10" style="" />
+        <div id="chart-timeline" class="px-5 lg:px-40" style="" />
       </div>
 
       <div id="centered-skills-text" class="">
