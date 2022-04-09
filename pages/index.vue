@@ -166,6 +166,7 @@
               items-center
               justify-center"
             >
+              <!-- Generated with : https://www.tailwindtoolbox.com/icons -->
               <svg
                 class="h-6 w-6 text-green-600"
                 width="24"
@@ -212,6 +213,7 @@
               items-center
               justify-center"
             >
+              <!-- Generated with : https://www.tailwindtoolbox.com/icons -->
               <svg
                 class="h-6 w-6 text-green-600"
                 width="24"
