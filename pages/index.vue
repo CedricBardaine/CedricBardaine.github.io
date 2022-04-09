@@ -245,7 +245,7 @@
         mx-6
       "
       >
-        Toutes mes compétences
+        Mes skills
       </div>
 
       <div id="chart-bubbles" class="px-5 lg:px-40" style="" />
@@ -340,7 +340,25 @@ export default {
 
     this.loadTimelineChart()
 
-    this.loadBubblesChart()
+    this.loadBubblesChart([
+      ['Assembleur',
+        new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
+        1,
+        'etudes',
+        2
+      ],
+      ['VueJS',
+        new Date(2019, 9, 15),
+        5,
+        'pro',
+        4 * 12 * 2
+      ],
+      ['React',
+        new Date(2019, 2, 1),
+        2,
+        'perso',
+        1
+      ]])
 
     this.addScrollEventHandlers()
   },
@@ -402,7 +420,7 @@ export default {
 
     //
 
-    loadBubblesChart () {
+    loadBubblesChart (skillsData = [[]]) {
       GoogleCharts.load(drawChart, {
         packages: ['corechart']
       })
@@ -410,27 +428,11 @@ export default {
       // un champs qui filtre quel techno, un combobox avec en items un [].map(des noms) et en fonctoin de la valeur du combobox on [].filter(== au nom) l' [] qui est affichées
 
       function drawChart () {
-        const data = GoogleCharts.api.visualization.arrayToDataTable([
-          ['ID', 'Date', 'Maitrise', 'Context', 'Nombre de semaines passées dessus'],
-          ['Assembleur',
-            new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
-            1,
-            'etudes',
-            2
-          ],
-          ['VueJS',
-            new Date(2019, 9, 15),
-            5,
-            'pro',
-            4 * 12 * 2
-          ],
-          ['React',
-            new Date(2019, 2, 1),
-            2,
-            'perso',
-            1
-          ]
-        ])
+        const data = GoogleCharts.api.visualization.arrayToDataTable(
+          [
+            ['ID', 'Date', 'Maitrise', 'Context', 'Nombre de semaines passées dessus'],
+            ...skillsData
+          ])
 
         /*
         Niveaux de maitrise :
@@ -442,7 +444,7 @@ export default {
         */
 
         const options = {
-          title: 'Skills',
+          // title: 'Skills',
           hAxis: {
             title: '',
             format: 'MMM yyyy',
@@ -468,7 +470,7 @@ export default {
           vAxis: {
             title: 'Maitrise',
 
-            maxValue: 6,
+            maxValue: 7,
             minValue: 0,
             minorGridlines: {
               count: 0
