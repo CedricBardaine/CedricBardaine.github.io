@@ -289,7 +289,9 @@ export default {
         'section-my-skills',
         'section-my-passions',
         'section-my-links'
-      ]
+      ],
+
+      mouseOver_bubblesChartDiv: false
     }
   },
 
@@ -327,6 +329,15 @@ export default {
   //
 
   mounted () {
+    // Prevent smooth scroll if user overs the chart div.
+    const bubblesChartDiv = document.getElementById('chart-bubbles')
+    bubblesChartDiv.onmouseover = () => {
+      this.mouseOver_bubblesChartDiv = true
+    }
+    bubblesChartDiv.onmouseout = () => {
+      this.mouseOver_bubblesChartDiv = false
+    }
+
     this.loadTimelineChart()
 
     this.loadBubblesChart()
@@ -522,7 +533,7 @@ export default {
       document.getElementById('section-my-skills')
         .addEventListener('wheel', (evt) => {
           evt.preventDefault()
-          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[4]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[2]) }
+          if (!this.mouseOver_bubblesChartDiv) { if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[4]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[2]) } }
         })
 
       document.getElementById('section-my-passions')
