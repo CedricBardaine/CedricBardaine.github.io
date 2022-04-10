@@ -305,7 +305,7 @@
           </div>
           <div class="flex flex-wrap col-span-2 justify-center content-center">
             <div
-              v-for="(aKnowledge, ind) in knowledgesFiltered"
+              v-for="(aKnowledge, ind) in knowledgesFilteredShuffled"
               :key="ind"
               class="little-chip h-fit"
               :class="
@@ -396,7 +396,7 @@ export default {
 
         { name: 'Français', type: 'language' },
         { name: 'Anglais', type: 'language' },
-        { name: 'Allemand', type: 'language' },
+        // { name: 'Allemand', type: 'language' },
 
         { name: 'Adobe Photoshop', type: 'other' },
         { name: 'Adobe Premiere Pro', type: 'other' },
@@ -678,6 +678,7 @@ export default {
       // [[]] is somehow valid for the bubbles chart and it won't reload.
       return ret.length > 0 ? ret : [[]]
     },
+
     knowledgesFiltered () {
       if (!this.knowledgeFilter) {
         return this.knowledges
@@ -686,6 +687,9 @@ export default {
           aKnown => aKnown.name.toLowerCase().includes(this.knowledgeFilter.toLowerCase()))
       }
     },
+    knowledgesFilteredShuffled () {
+      return this.shuffleArray(this.knowledgesFiltered)
+    }
   },
   watch: {
     skillsFilter () {
@@ -902,6 +906,24 @@ export default {
           evt.preventDefault()
           if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[4]) }
         })
+    },
+
+    /** @see https://stackoverflow.com/a/2450976/13880103 Durstenfeld shuffle algorithm */
+    shuffleArray (array) {
+      let currentIndex = array.length; let randomIndex
+
+      // While there remain elements to shuffle.
+      while (currentIndex != 0) {
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]]
+      }
+
+      return array
     }
 
   }

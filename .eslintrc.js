@@ -24,5 +24,6 @@ module.exports = {
     'no-multiple-empty-lines': 1,
     'space-infix-ops': 1,
     indent: 1,
+    eqeqeq: 0,
   }
 }
