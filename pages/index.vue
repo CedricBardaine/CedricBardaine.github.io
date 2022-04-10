@@ -104,9 +104,9 @@
 
           text-2xl
           text-center
-          text-gray-500
+          text-white
 
-          rounded-full bg-white
+          rounded-full bg-green-500
           w-48 h-48
           p-4
           mx-6
@@ -126,9 +126,9 @@
 
           text-2xl
           text-center
-          text-green-600
+          text-white
 
-          rounded-full bg-white
+          rounded-full bg-green-500
           w-48 h-48
           p-4
           mx-6
@@ -154,7 +154,7 @@
             >
               <!-- Generated with : https://www.tailwindtoolbox.com/icons -->
               <svg
-                class="h-6 w-6 text-green-600"
+                class="h-6 w-6 text-white"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -173,9 +173,9 @@
 
           text-2xl
           text-center
-          text-green-600
+          text-white
 
-          rounded-full bg-white
+          rounded-full bg-green-500
           w-48 h-48
           p-4
           mx-6
@@ -201,7 +201,7 @@
             >
               <!-- Generated with : https://www.tailwindtoolbox.com/icons -->
               <svg
-                class="h-6 w-6 text-green-600"
+                class="h-6 w-6 text-white"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -403,7 +403,99 @@
       id="section-my-links"
       class="h-screen grid content-evenly bg-green-600"
     >
-      <div class="" />
+      <div class="grid justify-items-center">
+        <div
+          class="
+          text-4xl text-center
+          justify-self-center
+          text-white
+          p-4
+          mt-12
+        "
+        >
+          Besoin de me contacter ?
+        </div>
+        <div class="flex flex-wrap justify-center">
+          <a class="m-4 cursor-pointer" href="https://www.linkedin.com/in/c%C3%A9dric-bardaine-671ba014a/" target="_blank">
+            <svg
+              class="
+              h-12 w-12 text-white
+              transform transition duration-500 hover:scale-125
+              "
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+          </a>
+          <a class="m-4 cursor-pointer" href="https://github.com/CedricBardaine" target="_blank">
+            <svg
+              class="
+              h-12 w-12 text-white
+              transform transition duration-500 hover:scale-125
+              "
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+          </a>
+          <a class="m-4 cursor-pointer" href="mailto:cedricbardaine@gmail.com" target="_blank">
+            <svg
+              class="
+              h-12 w-12 text-white
+              transform transition duration-500 hover:scale-125
+              "
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >  <path stroke="none" d="M0 0h24v24H0z" />  <rect x="3" y="5" width="18" height="14" rx="2" />  <polyline points="3 7 12 13 21 7" /></svg>
+          </a>
+          <a class="m-4 cursor-pointer" href="https://www.instagram.com/cedbdb/" target="_blank">
+            <svg
+              class="
+              h-12 w-12 text-white
+              transform transition duration-500 hover:scale-125
+              "
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >  <rect
+              x="2"
+              y="2"
+              width="20"
+              height="20"
+              rx="5"
+              ry="5"
+            />  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+          </a>
+        </div>
+        <br><br>
+        <p class="text-white">
+          Site réalisé avec
+          <a href="https://nuxtjs.org/" target="_blank" class="text-lg">NuxtJS</a>,
+          <a href="https://tailwindcss.com/" target="_blank" class="text-lg">Tailwind</a> et
+          <a href="https://developers.google.com/chart" target="_blank" class="text-lg">Google Charts</a> pour les graphiques.
+        </p>
+
+        <!-- <div class="text-center flex flex-col place-content-end ">
+          <p class="text-white mb-1 text-sm">
+            Copyright © 2022. Tous droits réservés : Cédric BARDAINE (rappel, cette mention n'a aucune valeur juridique ;)
+          </p>
+        </div> -->
+      </div>
     </div>
   </div>
 </template>
