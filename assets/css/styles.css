@@ -11,3 +11,27 @@
 .btn-deactivated {
     @apply bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
 }
+
+.little-chip {
+    @apply px-4 py-2 m-1 bg-gray-400 rounded-full font-semibold text-xs flex w-max hover:bg-opacity-90 transition duration-300 ;
+    height: fit-content;
+}
+
+.little-chip.blue {
+    @apply text-white bg-blue-600 hover:bg-opacity-90 ;
+}
+.little-chip.green {
+    @apply text-white bg-green-600 hover:bg-opacity-90 ;
+}
+.little-chip.yellow {
+    @apply text-white bg-yellow-500 hover:bg-opacity-90 ;
+}
+.little-chip.purple {
+    @apply text-white bg-purple-600 hover:bg-opacity-90 ;
+}
+.talk-frame {
+    @apply text-lg text-center bg-gradient-to-r from-blue-600 to-green-400 rounded-md text-white p-4 mx-6
+}
+.search-field {
+    @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-600 
+}
