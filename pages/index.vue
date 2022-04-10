@@ -248,7 +248,7 @@
         Mes skills
       </div>
       <div>
-        <div class="flex flex-row place-content-center  ">
+        <div class="flex flex-row place-content-center  my-2">
           <button
             class="mx-2"
             :class="skillsType == 'frameworks' ? 'btn' : 'btn-deactivated'"
@@ -265,7 +265,22 @@
           </button>
         </div>
 
-        <div id="chart-bubbles" class="px-5 lg:px-40" style="height: 50vh" />
+        <div class="flex flex-row place-content-center my-2 ">
+          <div class="w-48">
+            <input
+              id="inline-full-name"
+              v-model="skillsFilter"
+              class="bg-gray-200 appearance-none
+            border-2 border-gray-200 rounded
+            w-full py-2 px-4 text-gray-700 leading-tight
+            focus:outline-none focus:bg-white focus:border-green-600"
+              type="text"
+              placeholder="Rechercher..."
+            >
+          </div>
+        </div>
+
+        <div id="chart-bubbles" class="px-5 lg:px-40 my-2" style="height: 40vh" />
       </div>
     </div>
 
@@ -311,7 +326,8 @@ export default {
 
       mouseOver_bubblesChartDiv: false,
 
-      skillsType: 'frameworks' // || languages
+      skillsType: 'frameworks', // || languages
+      skillsFilter: null,
     }
   },
 
@@ -353,54 +369,242 @@ export default {
         Niveaux de maitrise :
         1 : trop faible ou trop loin dans le temps pour encore parler de maitrise
         2 : minimale
-        3 : bonnes connaissances théoriques
-        4 : bonnes connaissances et une ou plusieurs mise en pratique
+        3 : bonnes connaissances théoriques et/ou petites mise(s) en pratique
+        4 : bonnes connaissances et une ou plusieurs bonnes mise(s) en pratique
         5 : maitrise
         */
 
       switch (this.skillsType) {
         case 'frameworks':
           return [
-            ['Assembleur',
-              new Date((new Date(2018, 0, 15).getTime() + new Date(2020, 0, 15).getTime()) / 2),
-              1, 'etudes', 2],
+
             ['VueJS',
-              new Date(2019, 9, 15),
-              5, 'pro', 4 * 12 * 2],
+              new Date(),
+              5, 'pro',
+              this.weeksBetween2Dates(new Date(), new Date(2020, 7))
+            ],
+
+            ['Ajax',
+              new Date(2018, 0),
+              2, 'etudes',
+              4 * 1
+            ],
+            ['Android Studio',
+              new Date(2019, 4),
+              4, 'etudes',
+              4 * 6
+            ],
+            ['Angular',
+              new Date(2020, 4),
+              4, 'etudes',
+              4 * 6
+            ],
+            ['AngularJS',
+              new Date(2019, 4),
+              3, 'etudes',
+              4 * 2
+            ],
+            ['Cordova',
+              new Date(2019, 4),
+              2, 'etudes',
+              4 * 1
+            ],
+            ['Ant',
+              new Date(2019, 0),
+              1, 'etudes',
+              4 * 1
+            ],
+            ['Bootstrap',
+              new Date(2019, 10),
+              3, 'etudes',
+              2 + 1 + 1 + 1
+            ],
+            ['ChartJS',
+              new Date(2019, 5),
+              2 + 0.1, 'perso',
+              3
+            ],
+            ['C3js',
+              new Date(new Date().getFullYear(), new Date().getMonth() - 3),
+              5, 'pro',
+              1 + 2 + 1 + 1 + 1
+            ],
+            ['Docker',
+              new Date(new Date().getFullYear(), new Date().getMonth() - 1),
+              3, 'pro',
+              0
+            ],
+            ['Firebase',
+              new Date(),
+              4, 'etudes',
+              this.weeksBetween2Dates(new Date(), new Date(2020, 1))
+            ],
+            ['Git',
+              new Date(),
+              5, 'pro',
+              0
+            ],
+            // GitHub GitLab
+            ['Gradle',
+              new Date(2019, 4),
+              1, 'etudes',
+              0
+            ],
+            ['JavaServer Pages',
+              new Date(2019, 11),
+              3 - 0.1, 'etudes',
+              4 * 1
+            ],
+            ['JUnit',
+              new Date(2020, 2),
+              3, 'etudes',
+              4 * 1 + 4 * 1 + 2
+            ],
+            ['Jupyter Notebook',
+              new Date(2019, 1),
+              3, 'etudes',
+              4 * 1
+            ],
+            ['Kubernetes',
+              new Date(2021, 9),
+              3, 'etudes',
+              2
+            ],
+            ['MongoDB',
+              new Date(2022, 3),
+              3, 'etudes',
+              4 * 1 + 2
+            ],
+            ['NodeJS',
+              new Date(2020, 4),
+              5, 'etudes',
+              4 * 6 + 4 * 1
+            ],
+            ['PlantUML',
+              new Date(2020, 0),
+              3 + 0.1, 'perso',
+              4 * 2
+            ],
+            ['Mermaid.js',
+              new Date(2022, 0),
+              3 + 0.1, 'perso',
+              3
+            ],
             ['React',
-              new Date(2019, 2, 1),
-              2, 'perso', 1]
+              new Date(2019, 10),
+              3 + 0.2, 'perso',
+              4 * 2
+            ],
+            ['SonarQube',
+              new Date(2020, 9),
+              1, 'etudes',
+              2
+            ],
+            ['Symfony',
+              new Date(2019, 5),
+              3 - 0.1, 'etudes',
+              4 * 1 + 2
+            ],
+            ['TensorFlow',
+              new Date(2019, 1),
+              3 - 0.2, 'etudes',
+              4 * 1
+            ],
+            ['WordPress',
+              new Date(2017, 9),
+              4, 'etudes',
+              4 * 2
+            ],
           ]
         case 'languages':
           return [
-            ['Java',
-              new Date(2017, 9 - 1, 1),
-              4, 'etudes', 4 * 12 * 3],
-            ['HTML',
-              new Date(2017, 10 - 1, 1),
-              4, 'etudes', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
-            ['CSS',
-              new Date(2017, 11 - 1, 1),
-              4, 'pro', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
-            ['Javascript',
-              new Date(2017, 12 - 1, 1),
-              5, 'pro', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
-            ['SQL',
-              new Date(2017, 13 - 1, 1),
-              5, 'pro', this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))],
 
+            ['Javascript',
+              new Date(),
+              5, 'pro',
+              this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))
+            ],
+            ['Python',
+              new Date(),
+              5, 'pro',
+              4 * 6 + this.weeksBetween2Dates(new Date(), new Date(2020, 9))
+            ],
+            ['Postgresql',
+              new Date(new Date().getFullYear(), new Date().getMonth() - 1),
+              5, 'pro',
+              this.weeksBetween2Dates(new Date(), new Date(2020, 9))
+            ],
+            ['Bash',
+              new Date(),
+              4, 'pro',
+              this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))
+            ],
+            ['CSS',
+              new Date(),
+              4, 'pro',
+              this.weeksBetween2Dates(new Date(), new Date(2017, 0, 0))
+            ],
+
+            ['HTML',
+              new Date(new Date().getFullYear, -1, 1),
+              4, 'etudes',
+              (new Date().getFullYear, -2, 1)
+            ],
+
+            ['Java',
+              new Date(2017 + 3, 9 - 1, 1),
+              4, 'etudes',
+              4 * 12 * 3
+            ],
             ['PHP',
               new Date(2018, 9 - 1, 1),
-              4, 'pro', 4 * 12],
-
+              3, 'pro',
+              4 * 12
+            ],
             ['Typescript',
               new Date(2020, 1 - 1, 1),
-              4, 'etudes', 6 * 4],
+              4, 'etudes',
+              4 * 6
+            ],
+            ['C++',
+              new Date(2019, 5),
+              4, 'etudes',
+              3 * 3
+            ],
+            ['XML',
+              new Date(2022, 0),
+              4, 'etudes',
+              0
+            ],
+            ['Assembleur',
+              new Date(2018, 10),
+              1, 'etudes',
+              2],
+            ['Dart',
+              new Date(2022, 2),
+              4, 'etudes',
+              4 * 12 + 4 * 2],
 
           ]
 
         default: return []
       }
+    },
+    skillsDisplayed_filtered () {
+      let ret
+      if (!this.skillsFilter) {
+        ret = this.skillsDisplayed
+      } else {
+        ret = this.skillsDisplayed.filter(
+          aSkill => aSkill[0].toLowerCase().includes(this.skillsFilter.toLowerCase()))
+      }
+      // [[]] is somehow valid for the bubbles chart and it won't reload.
+      return ret.length > 0 ? ret : [[]]
+    }
+  },
+  watch: {
+    skillsFilter () {
+      this.loadBubblesChart()
     }
   },
 
@@ -437,9 +641,9 @@ export default {
   //
 
   methods: {
-    weeksBetween2Dates (date1, date2) {
+    weeksBetween2Dates (dateTo, dateFrom) {
       return Math.ceil(
-        ((date1.getTime() - date2.getTime()) / (1000 * 3600 * 24) / 7))
+        ((dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24) / 7))
     },
     loadPieExampleChart () {
       // Load the charts library with a callback
@@ -493,7 +697,7 @@ export default {
 
     //
 
-    loadBubblesChart (skillsData = this.skillsDisplayed) {
+    loadBubblesChart (skillsData = this.skillsDisplayed_filtered) {
       GoogleCharts.load(drawChart, {
         packages: ['corechart']
       })
@@ -507,17 +711,17 @@ export default {
             ...skillsData
           ])
 
+        const ticksDate = []
+        for (let ind = 2017; ind <= new Date().getFullYear() + 1; ind++) {
+          ticksDate.push(new Date(ind, 0))
+        }
+
         const options = {
-          // title: 'Skills',
+          // title: '',
           hAxis: {
-            title: '',
-            format: 'MMM yyyy',
-            ticks: [
-              new Date(2017, 0),
-              new Date(2018, 0),
-              new Date(2019, 0),
-              new Date(2020, 0)
-            ],
+            title: 'Dernière utilisation en date',
+            format: 'yyyy',
+            ticks: ticksDate,
 
             minorGridlines: {
               count: -1
@@ -551,7 +755,7 @@ export default {
 
           explorer: {
             action: [' dragToZoom'],
-            zoomDelta: 1.1,
+            zoomDelta: 1.5,
             axis: 'horizontal',
             keepInBounds: true
           }
@@ -616,6 +820,7 @@ export default {
     }
 
   }
+
 }
 
 </script>

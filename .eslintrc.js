@@ -22,5 +22,7 @@ module.exports = {
     'comma-dangle': 0,
     'no-trailing-spaces': 1,
     'no-multiple-empty-lines': 1,
+    'space-infix-ops': 1,
+    indent: 1,
   }
 }
