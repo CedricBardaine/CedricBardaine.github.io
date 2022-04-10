@@ -5,7 +5,7 @@
       class="h-screen grid content-center bgMe"
     >
       <div class="justify-self-center">
-        <div class="text-4xl lg:text-9xl text-center bg-gray-50 bg-opacity-25 hover:bg-opacity-50 ease-linear duration-100 px-8 py-4">
+        <div class="text-4xl text-gray-900 lg:text-9xl text-center bg-gray-50 bg-opacity-25 hover:bg-opacity-50 ease-linear duration-100 px-8 py-4">
           Cédric
           <br>
           BARDAINE
@@ -328,6 +328,43 @@
       id="section-my-passions"
       class="h-screen grid content-evenly bg-blue-600"
     >
+      <div class="w-full h-screen flex flex-row place-content-around absolute">
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="
+            text-lg
+            text-center
+          bg-white
+            bg-opacity-50
+            p-4
+            mx-2
+            z-10
+          "
+          >
+            La musique, les concerts, les sorties, les amis
+          </div>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="
+            text-lg
+            text-center
+          bg-white
+            bg-opacity-50
+            p-4
+            mx-2
+            z-10
+          "
+          >
+            La moto, les roadtrips, les expériences partagées
+          </div>
+        </div>
+      </div>
+
       <div class="flex col-span-2 justify-around content-center absolute w-full">
         <div class=" w-full h-screen md:bg-black md:bg-opacity-50 hover:bg-opacity-0 transition duration-300 ease-in-out ">
           <br>
@@ -338,13 +375,28 @@
       </div>
       <div class="flex col-span-2 justify-around content-center">
         <div class=" w-full h-screen bg-music-1">
-          t e s t
+          <div />
         </div>
         <div class=" w-full h-screen bg-byke-1 ">
-          test
+          <div />
         </div>
       </div>
+
+      <div
+        class="
+        text-4xl text-center
+        justify-self-center
+        text-blue-600
+        p-4
+        mt-12
+        rounded-xl bg-white
+        absolute
+        "
+      >
+        Ce que j'aime ?
+      </div>
     </div>
+
     <!--  -->
 
     <div
