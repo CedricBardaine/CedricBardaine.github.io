@@ -246,6 +246,17 @@
       "
       >
         Mes skills
+        <br>
+        <br>
+        <div
+          class=" talk-frame justify-self-center"
+        >
+          Mon parcours s'est accompagné d'études, de projets et d'expériences
+          <br>
+          qui m'ont ammenées à maitriser certaines technologies,
+          <br>
+          représentées avec ce graphique à bulles 👇️
+        </div>
       </div>
       <div>
         <div class="flex flex-row place-content-center  my-2">
@@ -270,17 +281,58 @@
             <input
               id="inline-full-name"
               v-model="skillsFilter"
-              class="bg-gray-200 appearance-none
-            border-2 border-gray-200 rounded
-            w-full py-2 px-4 text-gray-700 leading-tight
-            focus:outline-none focus:bg-white focus:border-green-600"
+              autocomplete="off"
+              class="search-field"
               type="text"
               placeholder="Rechercher..."
             >
           </div>
         </div>
 
-        <div id="chart-bubbles" class="px-5 lg:px-40 my-2" style="height: 40vh" />
+        <div class="flex flex-row place-content-center">
+          <div id="chart-bubbles" class="my-2 w-full lg:w-3/4" style="height: 30vh" />
+        </div>
+      </div>
+
+      <!-- lg:max-w-3/4 -->
+
+      <div>
+        <div class=" grid grid-cols-3 place-content-around my-2">
+          <div class="col-span-1 text-center self-center talk-frame">
+            Mais aussi quelques autres connaissances
+            <br>
+            liées au digital 👉️
+            <br>
+            <br>
+            <div class="flex justify-center">
+              <div class="w-48">
+                <input
+                  id="inline-full-name"
+                  v-model="knowledgeFilter"
+                  autocomplete="off"
+                  class="search-field"
+                  type="text"
+                  placeholder="Rechercher..."
+                >
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap col-span-2 justify-center content-center">
+            <div
+              v-for="(aKnowledge, ind) in knowledgesFiltered"
+              :key="ind"
+              class="little-chip h-fit"
+              :class="
+                aKnowledge.type == 'ITKnowledge' ? 'blue' :
+                aKnowledge.type == 'devSoftwareOrIDE' ? 'green' :
+                aKnowledge.type == 'language' ? 'yellow' :
+                aKnowledge.type == 'other' ? 'purple' : ''
+              "
+            >
+              {{ aKnowledge.name }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -297,7 +349,7 @@
 
     <div
       id="section-my-links"
-      class="h-screen grid content-evenly bg-green-400"
+      class="h-screen grid content-evenly bg-green-600"
     >
       <div class="" />
     </div>
@@ -328,6 +380,45 @@ export default {
 
       skillsType: 'frameworks', // || languages
       skillsFilter: null,
+      knowledgeFilter: null,
+
+      knowledges: [
+        { name: 'Bases de données', type: 'ITKnowledge' },
+        { name: 'UML', type: 'ITKnowledge' },
+        { name: 'Meurise', type: 'ITKnowledge' },
+        { name: 'Linux', type: 'ITKnowledge' },
+        { name: 'Administration système', type: 'ITKnowledge' },
+        { name: 'Deep learning', type: 'ITKnowledge' },
+        { name: 'Agile Scrum', type: 'ITKnowledge' },
+        { name: 'Agile Kanban', type: 'ITKnowledge' },
+        { name: 'Droit du numérique', type: 'ITKnowledge' },
+        { name: 'Gestion de projet', type: 'ITKnowledge' },
+        { name: 'Ergonomie', type: 'ITKnowledge' },
+        { name: 'Communication', type: 'ITKnowledge' },
+        { name: 'UX UI', type: 'ITKnowledge' },
+        { name: 'Droit des sociétés', type: 'ITKnowledge' },
+        { name: 'Spécifications fonctionnelles et détaillées', type: 'ITKnowledge' },
+
+        { name: 'Atom', type: 'devSoftwareOrIDE' },
+        { name: 'Eclipse', type: 'devSoftwareOrIDE' },
+        { name: 'MySQL Workbench', type: 'devSoftwareOrIDE' },
+        { name: 'Notepad++', type: 'devSoftwareOrIDE' },
+        { name: 'PHPMyAdmin', type: 'devSoftwareOrIDE' },
+        { name: 'SourceTree', type: 'devSoftwareOrIDE' },
+        { name: 'Visual Studio', type: 'devSoftwareOrIDE' },
+        { name: 'Visual Studio Code', type: 'devSoftwareOrIDE' },
+
+        { name: 'Français', type: 'language' },
+        { name: 'Anglais', type: 'language' },
+        { name: 'Allemand', type: 'language' },
+
+        { name: 'Adobe Photoshop', type: 'other' },
+        { name: 'Adobe Premiere Pro', type: 'other' },
+        { name: 'Adobe After Effect', type: 'other' },
+        { name: 'Adobe Illustrator', type: 'other' },
+        { name: 'G Sheets / Docs / Slides ', type: 'other' },
+
+      ]
     }
   },
 
@@ -600,7 +691,15 @@ export default {
       }
       // [[]] is somehow valid for the bubbles chart and it won't reload.
       return ret.length > 0 ? ret : [[]]
-    }
+    },
+    knowledgesFiltered () {
+      if (!this.knowledgeFilter) {
+        return this.knowledges
+      } else {
+        return this.knowledges.filter(
+          aKnown => aKnown.name.toLowerCase().includes(this.knowledgeFilter.toLowerCase()))
+      }
+    },
   },
   watch: {
     skillsFilter () {
