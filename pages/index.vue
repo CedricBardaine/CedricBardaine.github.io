@@ -22,14 +22,7 @@
       <div id="centered-presentation-text" class="">
         <div class="grid justify-items-center">
           <div
-            class="
-            text-lg text-center
-            justify-self-center
-            bg-gradient-to-r from-blue-600 to-green-400 rounded-md
-            text-white
-            p-4
-            mx-6
-          "
+            class="talk-frame"
           >
             Salut ! Moi c'est Cédric,
             je suis développeur Fullstack au sein d'une start-up
@@ -68,14 +61,7 @@
       <div id="centered-skills-text" class="">
         <div class="grid justify-items-center">
           <div
-            class="
-            text-lg text-center
-            justify-self-center
-            bg-gradient-to-r from-blue-600 to-green-400 rounded-md
-            text-white
-            p-4
-            mx-6
-          "
+            class="talk-frame"
           >
             J'ai donc un profil de développeur web fullstack, à l'aise sur la plupart des technos de la toile 😎
             <br>
