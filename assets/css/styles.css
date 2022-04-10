@@ -1,5 +1,30 @@
 .bgMe {
-    background: url("assets/moi.jpg");
+    background: url("assets/img/moi.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.bg-music-1 {
+    background: url("assets/img/mem.jpg");
+    background-position: left;
+    background-size: cover;
+}
+.bg-music-2 {
+    background: url("assets/img/Yelle.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.bg-byke-1 {
+    background: url("assets/img/Auvergne_sky.JPG");
+    background-position: top;
+    background-size: cover;
+}
+.bg-byke-2 {
+    background: url("assets/img/roadtrip_Auvergne.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.bg-byke-3 {
+    background: url("assets/img/ballade.png");
     background-position: center;
     background-size: cover;
 }

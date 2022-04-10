@@ -328,9 +328,23 @@
       id="section-my-passions"
       class="h-screen grid content-evenly bg-blue-600"
     >
-      <div class="" />
+      <div class="flex col-span-2 justify-around content-center absolute w-full">
+        <div class=" w-full h-screen md:bg-black md:bg-opacity-50 hover:bg-opacity-0 transition duration-300 ease-in-out ">
+          <br>
+        </div>
+        <div class=" w-full h-screen md:bg-black md:bg-opacity-50 hover:bg-opacity-0 transition duration-300 ease-in-out ">
+          <br>
+        </div>
+      </div>
+      <div class="flex col-span-2 justify-around content-center">
+        <div class=" w-full h-screen bg-music-1">
+          t e s t
+        </div>
+        <div class=" w-full h-screen bg-byke-1 ">
+          test
+        </div>
+      </div>
     </div>
-
     <!--  -->
 
     <div
