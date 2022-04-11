@@ -307,6 +307,7 @@
     <!--  -->
 
     <div
+      v-if="innerWidth < 600"
       id="section-my-passions"
       class="h-screen grid content-evenly bg-blue-600"
     >
@@ -369,6 +370,73 @@
             Ce que j'aime ?
           </div>
         </div>
+      </div>
+    </div>
+    <!--   Mobile /\    Desktop \/   -->
+    <div
+      v-else
+      id="section-my-passions"
+      class="h-screen grid content-evenly bg-blue-600"
+    >
+      <div class="w-full h-screen flex flex-row place-content-around absolute">
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="
+            simple-overlay-text
+            w-32
+            text-lg
+            lg:w-64
+            lg:text-xl
+            "
+          >
+            La musique, les concerts, les sorties, les amis
+          </div>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="
+            simple-overlay-text
+            w-32
+            text-lg
+            lg:w-64
+            lg:text-xl
+            "
+          >
+            La moto, les roadtrips, les expériences partagées
+          </div>
+        </div>
+      </div>
+
+      <div class="flex col-span-2 justify-around content-center absolute w-full">
+        <div class=" w-full h-screen md:bg-black md:bg-opacity-50 hover:bg-opacity-0 transition duration-300 ease-in-out ">
+          <br>
+        </div>
+        <div class=" w-full h-screen md:bg-black md:bg-opacity-50 hover:bg-opacity-0 transition duration-300 ease-in-out ">
+          <br>
+        </div>
+      </div>
+      <div class="flex col-span-2 justify-around content-center">
+        <div class=" w-full h-screen bg-music-1">
+          <div />
+        </div>
+        <div class=" w-full h-screen bg-byke-1 ">
+          <div />
+        </div>
+      </div>
+
+      <div
+        class="
+        title
+
+        mt-12
+        absolute
+        "
+      >
+        Ce que j'aime ?
       </div>
     </div>
 
@@ -824,6 +892,9 @@ export default {
     },
     knowledgesFilteredShuffled () {
       return this.shuffleArray(this.knowledgesFiltered)
+    },
+    innerWidth () {
+      return window.innerWidth
     }
   },
   watch: {
