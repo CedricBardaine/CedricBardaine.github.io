@@ -376,16 +376,19 @@
 
     <div
       id="section-my-links"
-      class="h-screen grid content-evenly bg-green-600"
+      class="h-screen grid place-items-stretch content-between bg-green-600"
     >
-      <div class="grid justify-items-center">
+      <div>
+        <span />
+      </div>
+
+      <div>
         <div
           class="
           text-4xl text-center
           justify-self-center
           text-white
           p-4
-          mt-12
         "
         >
           Besoin de me contacter ?
@@ -457,20 +460,22 @@
             />  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
           </a>
         </div>
-        <br><br>
-        <p class="text-white">
-          Site réalisé avec
-          <a href="https://nuxtjs.org/" target="_blank" class="text-lg">NuxtJS</a>,
-          <a href="https://tailwindcss.com/" target="_blank" class="text-lg">Tailwind</a> et
-          <a href="https://developers.google.com/chart" target="_blank" class="text-lg">Google Charts</a> pour les graphiques.
-        </p>
+      </div>
 
-        <!-- <div class="text-center flex flex-col place-content-end ">
+      <div class="text-white mx-1">
+        <div>
+          Site réalisé avec
+          <a href="https://nuxtjs.org/" target="_blank" class="text-lg underline whitespace-nowrap">NuxtJS</a>,
+          <a href="https://tailwindcss.com/" target="_blank" class="text-lg underline whitespace-nowrap">Tailwind</a> et
+          <a href="https://developers.google.com/chart" target="_blank" class="text-lg underline whitespace-nowrap">Google Charts</a> pour les graphiques.
+        </div>
+      </div>
+
+      <!-- <div class="text-center flex flex-col place-content-end ">
           <p class="text-white mb-1 text-sm">
             Copyright © 2022. Tous droits réservés : Cédric BARDAINE (rappel, cette mention n'a aucune valeur juridique ;)
           </p>
         </div> -->
-      </div>
     </div>
   </div>
 </template>
