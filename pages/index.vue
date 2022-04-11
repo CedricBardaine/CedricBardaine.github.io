@@ -316,14 +316,12 @@
         >
           <div
             class="
+            simple-overlay-text
+            w-32
             text-lg
-            text-center
-          bg-white
-            bg-opacity-50
-            p-4
-            mx-2
-            z-10
-          "
+            lg:w-64
+            lg:text-xl
+            "
           >
             La musique, les concerts, les sorties, les amis
           </div>
@@ -333,14 +331,12 @@
         >
           <div
             class="
+            simple-overlay-text
+            w-32
             text-lg
-            text-center
-          bg-white
-            bg-opacity-50
-            p-4
-            mx-2
-            z-10
-          "
+            lg:w-64
+            lg:text-xl
+            "
           >
             La moto, les roadtrips, les expériences partagées
           </div>
