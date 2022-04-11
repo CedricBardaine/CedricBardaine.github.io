@@ -84,7 +84,7 @@
 
     <!--  -->
 
-    <div
+    <!-- <div
       id="section-my-projects"
       class="h-screen grid content-evenly bg-blue-600"
     >
@@ -157,7 +157,6 @@
               items-center
               justify-center"
             >
-              <!-- Generated with : https://www.tailwindtoolbox.com/icons -->
               <svg
                 class="h-6 w-6 text-white"
                 width="24"
@@ -204,7 +203,6 @@
               items-center
               justify-center"
             >
-              <!-- Generated with : https://www.tailwindtoolbox.com/icons -->
               <svg
                 class="h-6 w-6 text-white"
                 width="24"
@@ -219,7 +217,7 @@
             </div>
           </div></a>
       </div>
-    </div>
+    </div> -->
 
     <!--  -->
 
@@ -509,6 +507,11 @@
 
 import { GoogleCharts } from 'google-charts'
 
+/*
+Notes :
+ * Icons generated with : https://www.tailwindtoolbox.com/icons
+*/
+
 export default {
   name: 'IndexPage',
 
@@ -516,14 +519,6 @@ export default {
     return {
       lastKnownScrollYPosition: 0,
       currentDiv: 0,
-      scrollDivsName: [
-        'section-me',
-        'section-myself',
-        'section-my-projects',
-        'section-my-skills',
-        'section-my-passions',
-        'section-my-links'
-      ],
 
       mouseOver_bubblesChartDiv: false,
 
@@ -1037,37 +1032,37 @@ export default {
       document.getElementById('section-me')
         .addEventListener('wheel', (evt) => {
           evt.preventDefault()
-          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[1]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
+          if (evt.deltaY > 0) { this.scrollToDiv('section-myself') } else if (evt.deltaY < 0) { this.scrollToDiv('section-me') }
         })
 
       document.getElementById('section-myself')
         .addEventListener('wheel', (evt) => {
           evt.preventDefault()
-          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[2]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[0]) }
+          if (evt.deltaY > 0) { this.scrollToDiv('section-my-skills') } else if (evt.deltaY < 0) { this.scrollToDiv('section-me') }
         })
 
-      document.getElementById('section-my-projects')
-        .addEventListener('wheel', (evt) => {
-          evt.preventDefault()
-          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[3]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[1]) }
-        })
+      // document.getElementById('section-my-projects')
+      //   .addEventListener('wheel', (evt) => {
+      //     evt.preventDefault()
+      //     if (evt.deltaY > 0) { this.scrollToDiv('section-my-skills') } else if (evt.deltaY < 0) { this.scrollToDiv('section-myself') }
+      //   })
 
       document.getElementById('section-my-skills')
         .addEventListener('wheel', (evt) => {
           evt.preventDefault()
-          if (!this.mouseOver_bubblesChartDiv) { if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[4]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[2]) } }
+          if (!this.mouseOver_bubblesChartDiv) { if (evt.deltaY > 0) { this.scrollToDiv('section-my-passions') } else if (evt.deltaY < 0) { this.scrollToDiv('section-myself') } }
         })
 
       document.getElementById('section-my-passions')
         .addEventListener('wheel', (evt) => {
           evt.preventDefault()
-          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[3]) }
+          if (evt.deltaY > 0) { this.scrollToDiv('section-my-links') } else if (evt.deltaY < 0) { this.scrollToDiv('section-my-skills') }
         })
 
       document.getElementById('section-my-links')
         .addEventListener('wheel', (evt) => {
           evt.preventDefault()
-          if (evt.deltaY > 0) { this.scrollToDiv(this.scrollDivsName[5]) } else if (evt.deltaY < 0) { this.scrollToDiv(this.scrollDivsName[4]) }
+          if (evt.deltaY > 0) { this.scrollToDiv('section-my-links') } else if (evt.deltaY < 0) { this.scrollToDiv('section-my-passions') }
         })
     },
 
