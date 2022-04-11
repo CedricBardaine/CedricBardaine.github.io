@@ -75,8 +75,6 @@
             Mais j'ai aussi des compétences en mobile notamment avec Flutter, ou en natif (Android)
             <br>
             ainsi qu'en POO <span class="text-xl">🤘</span>
-            <br>
-            (Vous vous demandez quels langages ou frameworks je maitrise ? la réponse plus bas...)
           </div>
         </div>
       </div>
