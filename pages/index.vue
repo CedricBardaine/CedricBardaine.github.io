@@ -26,8 +26,7 @@
           >
             Salut ! Moi c'est Cédric,
             je suis développeur Fullstack au sein d'une start-up
-            <br>
-            dont l'expertise est le traitement et la mise en valeur des données satellite ! 🚀
+            dont l'expertise est le traitement et la mise en valeur des données satellite ! <span class="text-xl">🚀</span>
           </div>
         </div>
 
@@ -37,9 +36,16 @@
       <div>
         <div class="justify-self-center">
           <div class="grid place-items-center">
-            Résumé de mon parcours post-bac
+            <div
+              class="
+              text-2xl text-center
+              justify-self-center
+              text-blue-600
+              "
+            >
+              Mon parcours
+            </div>
 
-            <br>
             <br>
 
             <div class="text-left justify-self-center w-auto border-t-4 border-b-4 pl-2 border-green-400 py-1">
@@ -52,10 +58,11 @@
           </div>
 
           <br>
-          <br>
         </div>
 
-        <div id="chart-timeline" class="px-5 lg:px-40" style="" />
+        <div class="flex flex-row place-content-center">
+          <div id="chart-timeline" class="my-2 w-full lg:w-2/5" style="" />
+        </div>
       </div>
 
       <div id="centered-skills-text" class="">
@@ -63,17 +70,15 @@
           <div
             class="talk-frame"
           >
-            J'ai donc un profil de développeur web fullstack, à l'aise sur la plupart des technos de la toile 😎
+            J'ai un profil de développeur web fullstack, à l'aise sur la plupart des technos de la toile <span class="text-xl">😎</span>
             <br>
-            Mais j'ai aussi des compétences en mobile avec notamment le framework de développement hybride Flutter
+            Mais j'ai aussi des compétences en mobile notamment avec Flutter, ou en natif (Android)
             <br>
-            ainsi qu'en POO 🤘
+            ainsi qu'en POO <span class="text-xl">🤘</span>
             <br>
             (Vous vous demandez quels langages ou frameworks je maitrise ? la réponse plus bas...)
           </div>
         </div>
-
-        <br>
       </div>
     </div>
 

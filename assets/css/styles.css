@@ -55,7 +55,7 @@
     @apply text-white bg-purple-600 hover:bg-opacity-90 ;
 }
 .talk-frame {
-    @apply text-lg text-center bg-gradient-to-r from-blue-600 to-green-400 rounded-md text-white p-4 mx-6
+    @apply text-base lg:max-w-md text-center bg-gradient-to-r from-blue-600 to-green-400 rounded-md text-white p-4 mx-6
 }
 .search-field {
     @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-600 
