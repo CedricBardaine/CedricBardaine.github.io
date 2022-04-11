@@ -232,15 +232,13 @@
       "
       >
         Mes skills
-        <br>
-        <br>
-        <div
-          class=" talk-frame justify-self-center"
-        >
-          Mon parcours s'est accompagné d'études, de projets et d'expériences
-          qui m'ont ammenées à maitriser certaines technologies,
-          représentées avec ce graphique à bulles <span class="text-xl">👇️</span>
-        </div>
+      </div>
+      <div
+        class=" talk-frame justify-self-center"
+      >
+        Mon parcours s'est accompagné d'études, de projets et d'expériences
+        qui m'ont ammenées à maitriser certaines technologies,
+        représentées avec ce graphique à bulles <span class="text-xl">👇️</span>
       </div>
       <div>
         <div class="flex flex-row place-content-center  my-2">
@@ -281,8 +279,8 @@
       <!-- lg:max-w-3/4 -->
 
       <div class="border-t-4 border-b-4 pl-2 border-green-400 py-1">
-        <div class="grid grid-cols-4 place-content-around my-2">
-          <div class="col-span-1 text-center self-center talk-frame">
+        <div class="grid md:grid-cols-4 place-content-around my-2">
+          <div class="md:col-span-1 text-center self-center talk-frame">
             Mais aussi quelques autres connaissances <span class="whitespace-nowrap">liées au digital <span class="text-xl">👉️</span></span>
 
             <div class="flex justify-center">
@@ -298,7 +296,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-wrap col-span-3 justify-center content-center overflow-auto" style="max-height: 20vh;">
+          <div class="md:col-span-3 flex flex-wrap justify-center content-center overflow-auto" style="max-height: 20vh;">
             <div
               v-for="(aKnowledge, ind) in knowledgesFilteredShuffled"
               :key="ind"
