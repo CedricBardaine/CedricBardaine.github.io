@@ -24,7 +24,7 @@
           <div
             class="talk-frame"
           >
-            Salut ! Moi c'est Cédric,
+            Moi c'est Cédric,
             je suis développeur Fullstack au sein d'une start-up
             dont l'expertise est le traitement et la mise en valeur des données satellite ! <span class="text-xl">🚀</span>
           </div>
@@ -280,7 +280,7 @@
                   autocomplete="off"
                   class="search-field"
                   type="text"
-                  placeholder="Rechercher..."
+                  placeholder="Filtrer..."
                 >
               </div>
             </div>
