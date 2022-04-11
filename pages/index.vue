@@ -37,11 +37,7 @@
         <div class="justify-self-center">
           <div class="grid place-items-center">
             <div
-              class="
-              text-2xl text-center
-              justify-self-center
-              text-blue-600
-              "
+              class="title"
             >
               Mon parcours
             </div>
@@ -223,18 +219,11 @@
       id="section-my-skills"
       class="h-screen grid content-evenly"
     >
-      <div
-        class="
-        text-4xl text-center
-        justify-self-center
-        text-blue-600
-
-      "
-      >
+      <div class="title">
         Mes skills
       </div>
       <div
-        class=" talk-frame justify-self-center"
+        class="talk-frame justify-self-center"
       >
         Mon parcours s'est accompagné d'études, de projets et d'expériences
         qui m'ont ammenées à maitriser certaines technologies,
@@ -296,7 +285,7 @@
               </div>
             </div>
           </div>
-          <div class="md:col-span-3 flex flex-wrap justify-center content-center overflow-auto" style="max-height: 20vh;">
+          <div class="md:col-span-3 flex flex-wrap justify-center content-center overflow-auto my-1" style="max-height: 20vh;">
             <div
               v-for="(aKnowledge, ind) in knowledgesFilteredShuffled"
               :key="ind"
@@ -377,12 +366,9 @@
 
       <div
         class="
-        text-4xl text-center
-        justify-self-center
-        text-blue-600
-        p-4
+        title
+
         mt-12
-        rounded-xl bg-white
         absolute
         "
       >

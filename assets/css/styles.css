@@ -60,3 +60,6 @@
 .search-field {
     @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-600 
 }
+.title {
+    @apply md:text-4xl text-2xl  text-center text-blue-600  justify-self-center md:p-4 p-2 rounded-xl bg-white
+}
