@@ -955,6 +955,8 @@ export default {
 
         const options = {
           // title: '',
+          chartArea: { top: 16, bottom: 48 },
+          legend: { position: 'top', alignment: 'center' },
           hAxis: {
             title: 'Dernière utilisation en date',
             format: 'yyyy',
@@ -965,12 +967,6 @@ export default {
             }
 
           },
-
-          /* ,
-
-          chartArea : {
-          top : 0
-          } */
 
           vAxis: {
             title: 'Maitrise',
