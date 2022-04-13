@@ -760,6 +760,24 @@ export default {
               5, 'etudes',
               4 * 6 + 4 * 1
             ],
+            [
+              'Spring',
+              new Date(2020, 4),
+              2, 'etudes',
+              1 + 1,
+            ],
+            [
+              'Swing',
+              new Date(2020, 4),
+              2 - 0.2, 'etudes',
+              1 + 1,
+            ],
+            [
+              'Twig',
+              new Date(2020, 5),
+              1, 'etudes',
+              1,
+            ],
             ['PlantUML',
               new Date(2020, 0),
               3 + 0.1, 'perso',
@@ -784,6 +802,11 @@ export default {
               new Date(2019, 5),
               3 - 0.1, 'etudes',
               4 * 1 + 2
+            ],
+            ['API Platform',
+              new Date(2019, 5),
+              2, 'etudes',
+              4 * 1
             ],
             ['TensorFlow',
               new Date(2019, 1),
