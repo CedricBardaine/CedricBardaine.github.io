@@ -306,6 +306,10 @@
 
     <!--  -->
 
+    <div class="h-16 ">
+      <hr v-show="innerWidth < 600" class=" border-red-500 ">
+    </div>
+
     <div
       v-if="innerWidth < 600"
       id="section-my-passions"
@@ -902,7 +906,13 @@ export default {
           aSkill => aSkill[0].toLowerCase().includes(this.skillsFilter.toLowerCase()))
       }
       // [[]] is somehow valid for the bubbles chart and it won't reload.
-      return ret.length > 0 ? ret : [[]]
+      return ret.length
+        ? ret
+        : [[null,
+            new Date(),
+            0, null,
+            0
+          ]]
     },
 
     knowledgesFiltered () {
